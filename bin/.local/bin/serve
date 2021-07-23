@@ -1,0 +1,11 @@
+#!/bin/sh
+
+printf 'http://localhost:8000' |pbcopy
+
+if [ -n "$1" ]
+then
+    FOLDER_PATH="$(realpath "$1")"
+    python3 -m http.server -d "$FOLDER_PATH"
+else
+    python3 -m http.server
+fi

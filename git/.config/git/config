@@ -1,0 +1,13 @@
+[user]
+    name = Norman Perrin
+    email = norman.perrin.94@gmail.com
+[core]
+    editor = nvim
+    excludesfile = ~/.gitignore
+# Clone git repos with URLs like "gh:normanperrin/.dotfiles"
+[url "https://github.com/"]
+    insteadOf = "gh:"
+[url "git@github.com:"]
+    pushInsteadOf = "gh:"
+[init]
+    defaultBranch = main

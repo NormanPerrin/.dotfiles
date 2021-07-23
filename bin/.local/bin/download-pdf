@@ -1,0 +1,6 @@
+#!/bin/sh
+
+IN_PATH="$1"
+OUT_PATH="$2"
+
+wkhtmltopdf --print-media-type -L 0mm "$IN_PATH" "$OUT_PATH"

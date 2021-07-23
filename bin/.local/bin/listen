@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if [ -n "$1" ]; then
+	selection="$(fd "$1" "$MUSIC" -t d)"
+	mpv "$selection"
+else
+	selection="$(fd . "$MUSIC" -t d -d 2 |sed 's@'"$MUSIC"'/@@' |fzf)"
+	if [ -n "$selection" ]; then
+		mpv "$MUSIC/$selection"
+	else
+		echo 'No selection'
+	fi
+fi

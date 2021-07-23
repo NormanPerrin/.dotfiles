@@ -1,0 +1,6 @@
+#!/bin/sh
+
+filename="/tmp/vmd-$(now).term"
+
+lowdown -sTterm $1 >"$filename"
+echo "$filename"

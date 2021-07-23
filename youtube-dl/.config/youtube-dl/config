@@ -1,0 +1,5 @@
+-o "$HOME/Movies/downloads/%(title)s.%(ext)s"
+
+-f 'best[ext=mp4][height=720][tbr<=?1100]'/'best[ext=mp4][height=720][tbr<=?1400]'/'best[ext=mp4][height=720][tbr<=?1600]'/'best[ext=mp4][height<=?1080][height>480][tbr<=?1100]'/'best[ext=mp4][height<=?1080][height>480][tbr<=?1400]'/'best[ext=mp4][height<=?1080][height>480][tbr<=?1600]'/'best[ext=mp4][height<=?1080][height>480][tbr<=?1800]'/'best[ext=mp4][height<=?1080][height>480]'/best
+
+--prefer-ffmpeg
