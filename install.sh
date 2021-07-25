@@ -6,4 +6,4 @@ brew install --cask spectacle firefox 1password 1password-cli hey discord slack 
 
 brew install nvim nvim deno rust yarn awscli tmux stow gpg pandoc imagemagick unoconv ffmpeg jq mysql rg fd fzf bat tree youtube-dl shellcheck aspell mpv
 
-yarn add -g n typescript esbuild
+yarn global add n typescript esbuild
