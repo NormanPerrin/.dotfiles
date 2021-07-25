@@ -162,7 +162,8 @@ window:
 
 font:
   normal:
-    family: 'JetBrains Mono Medium Italic Nerd Font Complete Mono'
+    family: 'JetBrainsMono Nerd Font'
+    style: Regular
   size: 16.0
 
 # If `true`, bold text is drawn using the bright color variants.
