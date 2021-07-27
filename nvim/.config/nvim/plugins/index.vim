@@ -11,7 +11,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' " Fuzzy finder
 Plug 'flazz/vim-colorschemes' " Colors
 Plug 'vim-airline/vim-airline' " Status bar
-Plug 'junegunn/limelight.vim' " Hightlight cursorline
+Plug 'junegunn/limelight.vim' " Hightlight cursorline toggle
+Plug 'junegunn/goyo.vim' " Center content toggle
 Plug 'jalvesaq/Nvim-R' " Replace RStudio
 Plug 'ryanoasis/vim-devicons' " Dev Icons
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } "Web vim text edition

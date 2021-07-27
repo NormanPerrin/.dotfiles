@@ -1,9 +1,16 @@
 # .dotfiles
 
+These are my dotfiles, maybe you don't use my setup but you find something of interest here
+
+What I do for setup my mac:
+
 1. Cambiar tecla "tab" por la de control --> General, teclado, teclas modificación.
+2. Run the install script
 
-Other programs to install
-- xmllint
-- Alacracitty: https://github.com/alacritty/alacritty
+If I make some other config I'll add it here.
 
-Install vim plug => https://github.com/junegunn/vim-plug, then :PlugInstall
+PENDING: add rsync for my external hard drive
+
+---
+
+For any problems or errors that might happend, please, create an issue. Thanks!
