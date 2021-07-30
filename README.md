@@ -4,8 +4,19 @@ These are my dotfiles, maybe you don't use my setup but you find something of in
 
 What I do for setup my mac:
 
-1. Cambiar tecla "tab" por la de control --> General, teclado, teclas modificación.
-2. Run the install script
+## Específico para Mac
+
+Cambiar configuración teclado:
+
+```
+Preferencias del sistema --> Teclado
+    --> Cambiar opción "Espera hasta la repetición" a corta.
+    --> Teclas de modificación. Cambiar tecla "tab" por la de control.
+```
+
+## Programas
+
+Run the install script
 
 If I make some other config I'll add it here.
 

@@ -96,9 +96,10 @@ KEYTIMEOUT=5
 # Plugins
 source "$XDG_CONFIG_HOME/zsh/functions/colors.zsh"
 source "$XDG_CONFIG_HOME/zsh/functions/completition.zsh"
-source "$XDG_CONFIG_HOME/zsh/functions/directories.zsh"
 source "$XDG_CONFIG_HOME/zsh/functions/git.zsh"
 source "$XDG_CONFIG_HOME/zsh/functions/history.zsh"
-
 # Themes
 source "$XDG_CONFIG_HOME/zsh/themes/robbyrussell.zsh-theme"
+# Alias
+source "$XDG_CONFIG_HOME/zsh/alias/directories.zsh"
+source "$XDG_CONFIG_HOME/zsh/alias/git.zsh"
