@@ -1,0 +1,3 @@
+#!/bin/sh
+
+base64 /dev/urandom | tr -d '/+' | dd bs=12 count=1 2>/dev/null

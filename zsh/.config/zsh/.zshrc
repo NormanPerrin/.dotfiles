@@ -25,6 +25,8 @@ export HISTCONTROL='ignoreboth'
 
 # Highlight man pages with bat
 export MANPAGER="sh -c 'col -bx |bat -l man -p'"
+# Search for manuals here too
+export MANPATH="$(manpath):/usr/local/man"
 
 # Clean-up config
 export __CF_USER_TEXT_ENCODING='0x0:0x56'
@@ -93,11 +95,12 @@ bindkey -v
 # Remove mode switching delay.
 KEYTIMEOUT=5
 
-# Plugins
+# Functions
 source "$XDG_CONFIG_HOME/zsh/functions/colors.zsh"
 source "$XDG_CONFIG_HOME/zsh/functions/completition.zsh"
 source "$XDG_CONFIG_HOME/zsh/functions/git.zsh"
 source "$XDG_CONFIG_HOME/zsh/functions/history.zsh"
+source "$XDG_CONFIG_HOME/zsh/functions/server.zsh"
 # Themes
 source "$XDG_CONFIG_HOME/zsh/themes/robbyrussell.zsh-theme"
 # Alias

@@ -1,4 +1,4 @@
-source /Users/nperrin/.config/nvim/plugins/index.vim
+source $XDG_CONFIG_HOME/nvim/plugins/index.vim
 
 " Don't try to be compatible with old vim
 set nocompatible
@@ -59,6 +59,6 @@ set backspace=indent,eol,start
 colorscheme wombat256dave
 highlight Whitespace ctermfg=DarkGrey guifg=grey70
 
-source /Users/nperrin/.config/nvim/functions.vim
-source /Users/nperrin/.config/nvim/indentation.vim
-source /Users/nperrin/.config/nvim/shortcuts/index.vim
+source $XDG_CONFIG_HOME/nvim/functions.vim
+source $XDG_CONFIG_HOME/nvim/indentation.vim
+source $XDG_CONFIG_HOME/nvim/shortcuts/index.vim

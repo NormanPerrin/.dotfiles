@@ -49,23 +49,7 @@ nnoremap <C-x> :tabclose<CR>
 " | <z=>                                 | Fix languajge error.                                 |
 
 
-" | R                                                |
-" | ------------------------------------------------ |
-" | Command            | Description                 |
-" | ------------------ | --------------------------- |
-" | \rf                | Open R terminal             |
-" | \rq                | Quit R terminal             |
-" | \l                 | Send entire Line            |
-" | \ss                | Send entire Selection       |
-" | \ff                | Send entire Function        |
-" | \bb                | Send entire Block           |
-" | \aa                | Send entire File            |
-" | \rv                | View data frame             |
-
-
 source $XDG_CONFIG_HOME/nvim/shortcuts/coc.vim
 source $XDG_CONFIG_HOME/nvim/shortcuts/fzf.vim
 source $XDG_CONFIG_HOME/nvim/shortcuts/html.vim
 source $XDG_CONFIG_HOME/nvim/shortcuts/nerdtree.vim
-source $XDG_CONFIG_HOME/nvim/shortcuts/rmd.vim
-source $XDG_CONFIG_HOME/nvim/shortcuts/tex.vim
