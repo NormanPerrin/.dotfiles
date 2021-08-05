@@ -8,12 +8,31 @@ nnoremap Q gq
 nnoremap <C-j> :tabprevious<CR>
 nnoremap <C-k> :tabnext<CR>
 nnoremap <C-x> :tabclose<CR>
+nnoremap <C-n> :tabnew<CR>
 
+" Move lines in any mode
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
+
+" y behaves like d and c
+nnoremap Y y$
+
+" do not undo all text please!
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ; ;<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
 
 " | System shortcuts I might forget                                                             |
 " | ------------------------------------------------------------------------------------------- |
 " | Command                              | Description                                          |
 " | ------------------------------------ | ---------------------------------------------------- |
+" | <C-w> q                              | Close buffer                                         |
+" | <C-w> v                              | Split vertical                                       |
+" | <C-w> n                              | Split horizontal                                     |
 " | gx                                   | Open hovered link.                                   |
 " | g[k-j]                               | Move though breaked lines                            |
 " | g[0-$]                               | Same as above but for final and first of the line.   |
@@ -46,10 +65,11 @@ nnoremap <C-x> :tabclose<CR>
 " | :setlocal spell! spelllang=en_us     | Change language checking.                            |
 " | <]s>                                 | Navigate language error forward.                     |
 " | <[s>                                 | Navigate language error backwards.                   |
-" | <z=>                                 | Fix languajge error.                                 |
+" | <z=>                                 | Fix language error.                                  |
 
 
 source $XDG_CONFIG_HOME/nvim/shortcuts/coc.vim
 source $XDG_CONFIG_HOME/nvim/shortcuts/fzf.vim
 source $XDG_CONFIG_HOME/nvim/shortcuts/html.vim
 source $XDG_CONFIG_HOME/nvim/shortcuts/nerdtree.vim
+source $XDG_CONFIG_HOME/nvim/shortcuts/goyo.vim

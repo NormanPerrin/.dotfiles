@@ -5,6 +5,8 @@ let g:coc_global_extensions = [
 \ 'coc-css'
 \ ]
 
+let g:NERDTreeWinPos = 'right'
+
 if isdirectory('./node_modules') && isdirectory('./node_modules/prettier')
   let g:coc_global_extensions += ['coc-prettier']
 endif

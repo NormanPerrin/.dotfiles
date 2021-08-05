@@ -1,5 +1,5 @@
 " Show documentation
-nnoremap <silent> <leader>k :call CocAction('doHover')<CR>
+nnoremap <silent> <leader>d :call CocAction('doHover')<CR>
 
 " Goto
 nmap <silent> gd <Plug>(coc-definition)

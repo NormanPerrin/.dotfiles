@@ -2,4 +2,4 @@
 nnoremap <C-s> :NERDTreeToggle<CR>
 
 " Focus in directory list
-nnoremap <leader>n :NERDTreeFind<CR>
+nnoremap <leader>f :NERDTreeFind<CR>

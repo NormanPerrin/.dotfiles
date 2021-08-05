@@ -1,6 +1,7 @@
 [user]
     name = Norman Perrin
     email = norman.perrin.94@gmail.com
+    signingKey = EDE35A04B36DAFC471C64AE1303DFEF9E29C1A10
 [core]
     editor = nvim
     excludesfile = ~/.gitignore
@@ -11,3 +12,5 @@
     pushInsteadOf = "gh:"
 [init]
     defaultBranch = main
+[gpg]
+    program = gpg

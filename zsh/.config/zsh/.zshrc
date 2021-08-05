@@ -45,6 +45,9 @@ export SHELL_SESSION_HISTORY=0
 export LESSHISTFILE="$XDG_CACHE_HOME/less_history"
 export NODE_REPL_HISTORY="$XDG_CACHE_HOME/node_repl_history"
 
+# Solves "Inappropriate ioctl for device gpg" error... copied and pasted from SO, don't ask me why
+export GPG_TTY=$(tty)
+
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
