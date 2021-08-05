@@ -4,11 +4,11 @@
 
 brew tap homebrew/cask-fonts
 
-brew install --cask spectacle firefox 1password 1password-cli discord slack whatsapp obs postman font-jetbrains-mono-nerd-font
+brew install --cask spectacle firefox 1password 1password-cli discord slack whatsapp obs postman font-jetbrains-mono-nerd-font robo-3t
 
-brew install nvim nvim deno rust yarn awscli docker tmux stow gpg pandoc imagemagick unoconv ffmpeg jq mysql rg fd fzf bat tree youtube-dl shellcheck aspell mpv nq
+brew install nvim nvim deno rust yarn awscli docker tmux stow gpg pandoc imagemagick unoconv ffmpeg jq mysql rg fd fzf bat tree youtube-dl shellcheck aspell mpv nq redis
 
-yarn global add n typescript esbuild
+yarn global add n typescript esbuild wscat
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -24,5 +24,17 @@ git clone https://github.com/alacritty/alacritty \
     && rm -fr alacritty
 
 git clone git://git.codemadness.org/sfeed \
+    && make -C sfeed \
+    && sudo make -C sfeed install
+
+curl -s https://kristaps.bsd.lv/lowdown/snapshots/lowdown.tar.gz > lowdown.tar.gz \
+    && tar -zxvf lowdown.tar.gz \
+    && rm lowdown.tar.gz \
+    && pushd lowdown*
+    && ./configure \
     && make \
     && make install
+    && make regress \
+    && sudo make install
+    && popd \
+    && rm -fr lowdown*
