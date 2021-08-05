@@ -19,11 +19,13 @@ alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
 
-alias md='mkdir -p'
+alias md='mkdir -pv'
 alias rd=rmdir
 
 # List directory contents
-alias lsa='ls -lah'
 alias l='ls -lah'
 alias ll='ls -lh'
 alias la='ls -lAh'
+
+# Shortcuts
+alias cdb="cd $BIN"

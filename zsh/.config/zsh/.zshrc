@@ -51,18 +51,6 @@ else
   export EDITOR='nvim'
 fi
 
-# Aliases
-alias vi='nvim -i NONE'
-alias mkd='mkdir -pv'
-alias gpg="gpg --homedir $GNUPGHOME"
-alias vz="vi $XDG_CONFIG_HOME/zsh/.zshrc"
-alias sz="source $XDG_CONFIG_HOME/zsh/.zshrc"
-alias vn="vi $XDG_CONFIG_HOME/nvim"
-alias la='ls -A1'
-alias l='ls -CF1'
-alias cdb="cd $BIN"
-alias mysql='mysqlsh'
-
 # Functions
 cdc () {
 	cd $CODE
@@ -105,4 +93,6 @@ source "$XDG_CONFIG_HOME/zsh/functions/server.zsh"
 source "$XDG_CONFIG_HOME/zsh/themes/robbyrussell.zsh-theme"
 # Alias
 source "$XDG_CONFIG_HOME/zsh/alias/directories.zsh"
+source "$XDG_CONFIG_HOME/zsh/alias/programs.zsh"
 source "$XDG_CONFIG_HOME/zsh/alias/git.zsh"
+source "$XDG_CONFIG_HOME/zsh/alias/vi.zsh"
