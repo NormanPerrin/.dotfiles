@@ -57,13 +57,13 @@ fi
 # Functions
 cdc () {
 	cd $CODE
-	response="$(fd -t d -E '*node_modules*' -d 5 . |fzf --preview='tree -L 2 -I 'node_modules' {}' --bind='space:toggle-preview')"
+	response="$(fd -t d -E '*node_modules*' -d 1 . |fzf --preview='tree -L 2 -I 'node_modules' {}' --bind='space:toggle-preview')"
 	[ -z "$response" ] && cd -
 	[ ! -z "$response" ] && cd "$CODE/$response"
 }
 cdv () {
 	cd "$HOME/Documents"
-	response="$(fd -t d -E '*node_modules*' -d 5 . |fzf --preview='tree -L 2 -I 'node_modules' {}' --bind='space:toggle-preview')"
+	response="$(fd -t d -E '*node_modules*' . |fzf --preview='tree -L 2 -I 'node_modules' {}' --bind='space:toggle-preview')"
 	[ -z "$response" ] && cd -
 	[ ! -z "$response" ] && cd "$HOME/Documents/$response"
 }
@@ -82,6 +82,9 @@ vc () {
 
 # Activate vim mode.
 bindkey -v
+
+# Activate auto complete
+autoload -U compinit; compinit
 
 # Remove mode switching delay.
 KEYTIMEOUT=5
