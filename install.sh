@@ -2,11 +2,11 @@
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-brew tap homebrew/cask-fonts
+brew tap homebrew/cask-fonts hashicorp/tap
 
 brew install --cask spectacle firefox 1password 1password-cli discord slack whatsapp obs postman font-jetbrains-mono-nerd-font robo-3t
 
-brew install nvim nvim deno rust yarn awscli docker docker-compose tmux stow gpg pandoc imagemagick unoconv ffmpeg jq mysql rg fd fzf bat tree youtube-dl shellcheck aspell mpv nq redis
+brew install nvim nvim deno rust yarn awscli docker docker-compose tmux stow gpg pandoc imagemagick unoconv ffmpeg jq mysql rg fd fzf bat tree youtube-dl shellcheck aspell mpv nq redis hashicorp/tap/terraform neofetch
 
 yarn global add n typescript esbuild wscat
 

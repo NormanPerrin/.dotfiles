@@ -85,6 +85,7 @@ bindkey -v
 
 # Activate auto complete
 autoload -U compinit; compinit
+# complete -o nospace -C /usr/local/bin/terraform terraform
 
 # Remove mode switching delay.
 KEYTIMEOUT=5
