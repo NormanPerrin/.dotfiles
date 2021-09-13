@@ -14,6 +14,7 @@ Plug 'junegunn/goyo.vim' " Center content toggle
 Plug 'ryanoasis/vim-devicons' " Dev Icons
 Plug 'voldikss/vim-floaterm' " Floating shell
 Plug 'ThePrimeagen/vim-be-good' " Vim practice
+Plug 'preservim/nerdtree' " Directory tree
 Plug 'jbyuki/venn.nvim' " Diagrams
 call plug#end()
 
@@ -22,3 +23,4 @@ source $XDG_CONFIG_HOME/nvim/plugins/floaterm.vim
 source $XDG_CONFIG_HOME/nvim/plugins/javascript.vim
 source $XDG_CONFIG_HOME/nvim/plugins/limelight.vim
 source $XDG_CONFIG_HOME/nvim/plugins/nerdcommenter.vim
+source $XDG_CONFIG_HOME/nvim/plugins/nerdtree.vim
