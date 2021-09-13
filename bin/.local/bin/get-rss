@@ -1,0 +1,3 @@
+#!/bin/sh
+
+curl -s "$1" |sfeed_web
