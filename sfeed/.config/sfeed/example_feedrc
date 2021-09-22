@@ -1,0 +1,18 @@
+# To see the bahaviour check up the manuals for sfeed_update and sfeedrc
+
+sfeedpath="$XDG_DATA_HOME/feeds/example"
+
+fetch() {
+    curl -L --max-redirs 2 -H "User-Agent:" -f -s -m 15 "$2" 2>/dev/null
+}
+
+feeds() {
+    feed 'Norman Perrin' 'https://nperrin.io/rss.xml'
+    # .
+    # .
+    # .
+    # here all the feed entries you want
+    # .
+    # .
+    # .
+}

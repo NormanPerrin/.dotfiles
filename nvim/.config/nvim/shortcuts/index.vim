@@ -69,7 +69,8 @@ inoremap ? ?<c-g>u
 
 
 source $XDG_CONFIG_HOME/nvim/shortcuts/coc.vim
-source $XDG_CONFIG_HOME/nvim/shortcuts/html.vim
 source $XDG_CONFIG_HOME/nvim/shortcuts/goyo.vim
+source $XDG_CONFIG_HOME/nvim/shortcuts/html.vim
+source $XDG_CONFIG_HOME/nvim/shortcuts/rss_feed.vim
 source $XDG_CONFIG_HOME/nvim/shortcuts/telescope.vim
 source $XDG_CONFIG_HOME/nvim/shortcuts/venn.vim
