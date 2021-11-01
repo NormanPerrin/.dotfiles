@@ -20,6 +20,9 @@ export LANG="en_US.UTF-8"
 export LESS='-R'
 export LESSOPEN='|pygmentize -g %s'
 
+# Habits
+export HABITS_STORE="$CODE/sites/nperrin.io/habits/habits.json"
+
 # Ignore duplicates in history
 export HISTCONTROL='ignoreboth'
 

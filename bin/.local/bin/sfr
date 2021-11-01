@@ -23,7 +23,7 @@ getFeedCount() {
 }
 
 feeds="$(fd . "$feeds_directory/$group" -t f -d 1 |sort |while read -r f; do getFeedCount "$(basename "$f")"; done)"
-feed="$(printf '%s\nALL' "$feeds" |fzf |sed 's/ (.*)//')"
+feed="$(printf '%s\nALL' "$feeds" |fzf |sed -E 's/ \([0-9]{1,3}\)//')"
 
 if [ -z "$feed" ]; then
     echo Nothing selected

@@ -1,0 +1,12 @@
+#!/opt/homebrew/bin/node
+
+const path = require('path'),
+  fs = require('fs');
+
+const object = require(path.resolve(process.argv[2])),
+  json = require(path.resolve(process.argv[3])),
+  objectPath = process.argv[4];
+
+json[objectPath].push(object);
+
+console.log(JSON.stringify(json, null, 2));

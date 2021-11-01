@@ -7,5 +7,5 @@ is_mpv="$(pbpaste |rg 'https://www\.youtube')"
 if [ -n "$is_mpv" ]; then
     mpv "$(pbpaste)"
 else
-    open -a firefox "$(pbpaste)"
+    open -a 'Brave Browser' "$(pbpaste)"
 fi

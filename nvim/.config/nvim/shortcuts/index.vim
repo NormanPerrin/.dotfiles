@@ -26,6 +26,11 @@ inoremap ; ;<c-g>u
 inoremap ! !<c-g>u
 inoremap ? ?<c-g>u
 
+" Cursor freestyle toggle
+nnoremap <leader>v :setlocal ve=all<cr>
+nnoremap <leader>!v :setlocal ve=<cr>
+
+
 " | System shortcuts I might forget                                                             |
 " | ------------------------------------------------------------------------------------------- |
 " | Command                              | Description                                          |

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# now only used for my personal feed reader...
+
+url="$(pbpaste)"
+is_yt="$(pbpaste |rg 'https://www\.youtube')"
+
+if [ -n "$is_yt" ]; then
+    youtube-dl "$url"
+else
+    download-pdf "$url" -o ~/Downloads/"$(basename "$url")"
+fi
