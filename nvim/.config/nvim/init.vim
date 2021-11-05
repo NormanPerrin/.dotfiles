@@ -56,6 +56,7 @@ set clipboard=unnamed
 " (homebrew version). see https://stackoverflow.com/a/3534090/34315
 set backspace=indent,eol,start
 
+set guifont=JetBrainsMono\ Nerd\ Font:h16
 colorscheme wombat256dave
 highlight Whitespace ctermfg=DarkGrey guifg=grey70
 
