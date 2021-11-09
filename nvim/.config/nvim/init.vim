@@ -30,9 +30,9 @@ set wildignore+=**/node_modules/**
 set ignorecase
 
 " Size of tab
-set tabstop=4
+set tabstop=2
 " Size of indent
-set shiftwidth=4
+set shiftwidth=2
 " Use tab instead of spaces
 set softtabstop=0 expandtab
 
@@ -56,7 +56,7 @@ set clipboard=unnamed
 " (homebrew version). see https://stackoverflow.com/a/3534090/34315
 set backspace=indent,eol,start
 
-set guifont=JetBrainsMono\ Nerd\ Font:h16
+set guifont=JetBrainsMono\ Nerd\ Font:h18
 colorscheme wombat256dave
 highlight Whitespace ctermfg=DarkGrey guifg=grey70
 
