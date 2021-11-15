@@ -5,8 +5,9 @@ export XDG_DATA_HOME="$HOME/.local/share"
 
 export BIN="$HOME/.local/bin"
 export CODE="$HOME/.local/code"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
 
-export PATH="/opt/homebrew/bin:$BIN:$PATH"
+export PATH="/opt/homebrew/bin:$CARGO_HOME/bin:$BIN:$PATH"
 
 # Export other
 export TEMPLATES="$HOME/.local/templates"
@@ -40,7 +41,6 @@ export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export ASPELL_CONF="per-conf $XDG_CONFIG_HOME/aspell/aspell.conf; personal $XDG_CONFIG_HOME/aspell/en.pws; repl $XDG_CONFIG_HOME/aspell/en.prepl"
 export BASH_COMPLETION_USER_FILE="$XDG_CONFIG_HOME/bash-completion/bash_completion"
-export CARGO_HOME="$XDG_DATA_HOME/cargo"
 
 # Clean-up cache
 export HISTFILE="$XDG_CACHE_HOME/bash_history"
