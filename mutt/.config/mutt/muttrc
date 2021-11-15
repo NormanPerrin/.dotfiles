@@ -1,0 +1,15 @@
+set folder = "imaps://norman.perrin.94@gmail.com@imap.gmail.com:993"
+
+set smtp_url = "smtps://norman.perrin.94@gmail.com@smtp.gmail.com:465"
+
+set from = "norman.perrin.94@gmail.com"
+set realname = "Norman Perrin"
+
+set spoolfile = "+INBOX"
+set record = "+Sent"
+set trash = "+Trash"
+set postponed = "+Drafts"
+
+mailboxes =INBOX =Sent =Trash =Draft =Junk =Other
+
+source $XDG_CONFIG_HOME/mutt/colors.muttrc
