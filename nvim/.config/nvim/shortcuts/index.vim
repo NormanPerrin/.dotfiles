@@ -73,7 +73,6 @@ nnoremap <leader>!v :setlocal ve=<cr>
 " | <z=>                                 | Fix language error.                                  |
 
 
-source $XDG_CONFIG_HOME/nvim/shortcuts/coc.vim
 source $XDG_CONFIG_HOME/nvim/shortcuts/goyo.vim
 source $XDG_CONFIG_HOME/nvim/shortcuts/html.vim
 source $XDG_CONFIG_HOME/nvim/shortcuts/rss_feed.vim

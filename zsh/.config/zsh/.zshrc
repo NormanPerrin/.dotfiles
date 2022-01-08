@@ -70,6 +70,7 @@ cdv () {
 	[ -z "$response" ] && cd -
 	[ ! -z "$response" ] && cd "$HOME/Documents/$response"
 }
+# Edition
 vd () {
 	cd "$HOME/Documents"
 	response="$(fd -t f -E '*node_modules*' -E '*.ico' -E '*.docx' -E '*.pdf' -E '*.png' -E '*.gz' -E '*.jpg' -E '*.mkv' -E '*.jpeg' . |fzf --preview='bat {}' --bind='space:toggle-preview')"
@@ -83,9 +84,6 @@ vc () {
 	[ ! -z "$response" ] && vi "$$CODE/$response"
 }
 
-# Activate vim mode.
-bindkey -v
-
 # Activate auto complete
 autoload -U compinit; compinit
 # complete -o nospace -C /usr/local/bin/terraform terraform
@@ -97,12 +95,15 @@ KEYTIMEOUT=5
 source "$XDG_CONFIG_HOME/zsh/functions/colors.zsh"
 source "$XDG_CONFIG_HOME/zsh/functions/completition.zsh"
 source "$XDG_CONFIG_HOME/zsh/functions/git.zsh"
+source "$XDG_CONFIG_HOME/zsh/functions/history-substring-search.zsh"
 source "$XDG_CONFIG_HOME/zsh/functions/history.zsh"
 source "$XDG_CONFIG_HOME/zsh/functions/server.zsh"
 # Themes
-source "$XDG_CONFIG_HOME/zsh/themes/robbyrussell.zsh-theme"
+source "$XDG_CONFIG_HOME/zsh/themes/robbyrussell.zsh"
 # Alias
 source "$XDG_CONFIG_HOME/zsh/alias/directories.zsh"
 source "$XDG_CONFIG_HOME/zsh/alias/programs.zsh"
 source "$XDG_CONFIG_HOME/zsh/alias/git.zsh"
 source "$XDG_CONFIG_HOME/zsh/alias/vi.zsh"
+# Bindings
+source "$XDG_CONFIG_HOME/zsh/bindings.zsh"

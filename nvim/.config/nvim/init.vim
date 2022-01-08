@@ -13,6 +13,9 @@ set ttyfast
 " set working directory as the one of the opened file
 set autochdir
 
+" Scroll
+set scrolloff=4
+set sidescrolloff=4
 
 " Colors for syntax
 syntax on
@@ -28,13 +31,6 @@ set wildignore+=**/node_modules/**
 
 " On searchs, ignore case
 set ignorecase
-
-" Size of tab
-set tabstop=2
-" Size of indent
-set shiftwidth=2
-" Use tab instead of spaces
-set softtabstop=0 expandtab
 
 " Show hidden char
 set list

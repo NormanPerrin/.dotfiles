@@ -1,2 +1,6 @@
-autocmd FileType yaml setlocal shiftwidth=2 tabstop=2 expandtab
-autocmd FileType r setlocal shiftwidth=2 tabstop=2 expandtab
+" Size of tab
+set tabstop=2
+" Size of indent
+set shiftwidth=2
+" Use tab instead of spaces
+set softtabstop=0 expandtab
