@@ -6,8 +6,9 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export BIN="$HOME/.local/bin"
 export CODE="$HOME/.local/code"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export LUA_LSP_HOME="$XDG_DATA_HOME/lua-language-server/bin"
 
-export PATH="/opt/homebrew/bin:$CARGO_HOME/bin:$BIN:$PATH"
+export PATH="/opt/homebrew/bin:$CARGO_HOME:$LUA_LSP_HOME:/bin:$BIN:$PATH"
 
 # Export other
 export TEMPLATES="$HOME/.local/templates"

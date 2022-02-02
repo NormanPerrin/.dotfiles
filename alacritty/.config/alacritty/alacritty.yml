@@ -170,9 +170,9 @@ font:
 draw_bold_text_with_bright_colors: true
 
 # Colors (Tomorrow Night)
-colors:
-  primary:
-    background: '#14282e'
+# colors:
+  # primary:
+    # background: '#14282e'
     # foreground: '#c5c8c6'
 
     # Bright and dim foreground colors
@@ -180,8 +180,8 @@ colors:
     # The dimmed foreground color is calculated automatically if it is not present.
     # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
     # is `false`, the normal foreground color will be used.
-    dim_foreground: '#828482'
-    bright_foreground: '#eaeaea'
+    # dim_foreground: '#828482'
+    # bright_foreground: '#eaeaea'
 
   # Cursor colors
   #
@@ -366,7 +366,7 @@ mouse:
   #triple_click: { threshold: 300 }
 
   # If this is `true`, the cursor is temporarily hidden when typing.
-  hide_when_typing: false
+  hide_when_typing: true
 
   #url:
     # URL launcher

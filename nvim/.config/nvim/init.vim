@@ -1,7 +1,17 @@
-source $XDG_CONFIG_HOME/nvim/plugins/index.vim
+source $XDG_CONFIG_HOME/nvim/plugins.vim
+
+" Size of tab
+set tabstop=2
+" Size of indent
+set shiftwidth=2
+" Use tab instead of spaces
+set softtabstop=0 expandtab
 
 " Don't try to be compatible with old vim
 set nocompatible
+
+" Completition menu options
+set completeopt=menu,menuone,noinsert,noselect,
 
 " Side relative number
 set relativenumber
@@ -54,8 +64,7 @@ set backspace=indent,eol,start
 
 set guifont=JetBrainsMono\ Nerd\ Font:h18
 colorscheme wombat256dave
-highlight Whitespace ctermfg=DarkGrey guifg=grey70
 
 source $XDG_CONFIG_HOME/nvim/functions.vim
-source $XDG_CONFIG_HOME/nvim/indentation.vim
-source $XDG_CONFIG_HOME/nvim/shortcuts/index.vim
+source $XDG_CONFIG_HOME/nvim/shortcuts.vim
+source $XDG_CONFIG_HOME/nvim/snippets.vim
