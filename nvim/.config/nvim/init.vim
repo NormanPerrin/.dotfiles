@@ -63,7 +63,7 @@ set clipboard=unnamed
 set backspace=indent,eol,start
 
 set guifont=JetBrainsMono\ Nerd\ Font:h18
-colorscheme wombat256dave
+colorscheme nord
 
 source $XDG_CONFIG_HOME/nvim/functions.vim
 source $XDG_CONFIG_HOME/nvim/shortcuts.vim
