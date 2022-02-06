@@ -1,6 +1,0 @@
-#!/bin/sh
-
-ssh me 'cd /var/www/paste.nperrin.io \
-    && mv {404,index}.html /tmp \
-    && rm -f * \
-    && mv /tmp/{404,index}.html .'

@@ -1,6 +1,9 @@
 " Update working directory to file dir
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
+" credits: https://vimtricks.com/p/clear-search-highlight
+nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+
 " Navigate tabs
 " gt --> tab next
 " gT --> tab previous

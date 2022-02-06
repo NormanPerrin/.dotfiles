@@ -3,6 +3,10 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
+export SFEED_PLUMBER='sfeed_open'
+export SFEED_YANKER='sfeed_copy'
+export SFEED_URL_FILE="$HOME/.sfeed/sfeedrc"
+
 export BIN="$HOME/.local/bin"
 export CODE="$HOME/.local/code"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
