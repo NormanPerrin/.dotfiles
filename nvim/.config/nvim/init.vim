@@ -27,8 +27,6 @@ set autochdir
 set scrolloff=4
 set sidescrolloff=4
 
-" Colors for syntax
-syntax on
 " Recognize type of file edited; Type file indent and plugin loaded when edited
 filetype plugin indent on
 
@@ -63,8 +61,10 @@ set clipboard=unnamed
 set backspace=indent,eol,start
 
 set guifont=JetBrainsMono\ Nerd\ Font:h18
-colorscheme nord
+
+set termguicolors
 
 source $XDG_CONFIG_HOME/nvim/functions.vim
 source $XDG_CONFIG_HOME/nvim/shortcuts.vim
 source $XDG_CONFIG_HOME/nvim/snippets.vim
+source $XDG_CONFIG_HOME/nvim/theme.vim

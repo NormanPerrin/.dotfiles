@@ -16,11 +16,10 @@ Plug 'onsails/lspkind-nvim'                       " pretty suggestions in cmp
 Plug 'nvim-telescope/telescope.nvim'              " Fuzzy finder
 Plug 'nvim-lua/plenary.nvim'                      " telescope dependency
 Plug 'voldikss/vim-floaterm'                      " Floating shell
+Plug 'hoob3rt/lualine.nvim'                       " Status line
 
 Plug 'preservim/nerdcommenter'                    " Comments
 Plug 'preservim/nerdtree'                         " Directory-manager
-
-Plug 'flazz/vim-colorschemes'                     " Colors
 Plug 'ryanoasis/vim-devicons'                     " Dev Icons
 
 Plug 'junegunn/limelight.vim'                     " Hightlight cursorline toggle
@@ -83,4 +82,5 @@ lua << EOF
   require('setup-config/lsp')
   require('setup-config/cmp')
   require('setup-config/tree-sitter')
+  require('setup-config/lualine')
 EOF
