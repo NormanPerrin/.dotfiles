@@ -64,7 +64,8 @@ set guifont=JetBrainsMono\ Nerd\ Font:h18
 
 set termguicolors
 
+set showtabline=2
+
 source $XDG_CONFIG_HOME/nvim/functions.vim
 source $XDG_CONFIG_HOME/nvim/shortcuts.vim
-source $XDG_CONFIG_HOME/nvim/snippets.vim
 source $XDG_CONFIG_HOME/nvim/theme.vim

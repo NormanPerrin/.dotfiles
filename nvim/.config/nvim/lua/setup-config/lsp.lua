@@ -18,7 +18,7 @@ local function on_attach(_, bufnr)
 
   setBufKeymap('n', 'gd'       , 'vim.lsp.buf.definition'     )
   setBufKeymap('n', 'gi'       , 'vim.lsp.buf.implementation' )
-  setBufKeymap('n', 'gt'       , 'vim.lsp.buf.type_definition')
+  setBufKeymap('n', 'gy'       , 'vim.lsp.buf.type_definition')
   setBufKeymap('n', 'K'        , 'vim.lsp.buf.hover'          )
   setBufKeymap('n', '<C-k>'    , 'vim.lsp.buf.signature_help' )
   setBufKeymap('n', '<space>ca', 'vim.lsp.buf.code_action'    )
@@ -59,6 +59,10 @@ lspconfig.yamlls.setup{
 
 lspconfig.html.setup{
   cmd = { "vscode-html-language-server", "--stdio" },
+  on_attach = on_attach
+}
+
+lspconfig.gopls.setup{
   on_attach = on_attach
 }
 

@@ -1,3 +1,4 @@
 #!/bin/sh
 
-sfeed_update
+sfeed_update 2>/dev/null
+echo 'Updated!'

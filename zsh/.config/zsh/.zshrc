@@ -11,8 +11,9 @@ export BIN="$HOME/.local/bin"
 export CODE="$HOME/.local/code"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export LUA_LSP_HOME="$XDG_DATA_HOME/lua-language-server/bin"
+export GOPATH="$XDG_DATA_HOME/go"
 
-export PATH="/opt/homebrew/bin:$CARGO_HOME:$LUA_LSP_HOME:/bin:$BIN:$PATH"
+export PATH="/opt/homebrew/bin:$CARGO_HOME:$LUA_LSP_HOME:/bin:$GOPATH/bin:$BIN:$PATH"
 
 # Export other
 export TEMPLATES="$HOME/.local/templates"
@@ -107,7 +108,7 @@ source "$XDG_CONFIG_HOME/zsh/functions/server.zsh"
 source "$XDG_CONFIG_HOME/zsh/themes/robbyrussell.zsh"
 # Alias
 source "$XDG_CONFIG_HOME/zsh/alias/directories.zsh"
-source "$XDG_CONFIG_HOME/zsh/alias/programs.zsh"
+source "$XDG_CONFIG_HOME/zsh/alias/others.zsh"
 source "$XDG_CONFIG_HOME/zsh/alias/git.zsh"
 source "$XDG_CONFIG_HOME/zsh/alias/vi.zsh"
 # Bindings

@@ -29,3 +29,17 @@ alias la='ls -lAh'
 
 # Shortcuts
 alias cdb="cd $BIN"
+
+cdc () {
+	cd $CODE
+	response="$(fd -t d -E '*node_modules*' -d 1 . |fzf --preview='tree -L 2 -I 'node_modules' {}' --bind='space:toggle-preview')"
+	[ -z "$response" ] && cd -
+	[ ! -z "$response" ] && cd "$CODE/$response"
+}
+
+cdv () {
+	cd "$HOME/Documents"
+	response="$(fd -t d -E '*node_modules*' . |fzf --preview='tree -L 2 -I 'node_modules' {}' --bind='space:toggle-preview')"
+	[ -z "$response" ] && cd -
+	[ ! -z "$response" ] && cd "$HOME/Documents/$response"
+}

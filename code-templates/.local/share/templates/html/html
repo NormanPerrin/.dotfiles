@@ -1,0 +1,13 @@
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="en-us">
+
+<title>$1</title>
+<meta charset="utf-8" />
+<meta name="author" content="$1" />
+<meta name="generator" content="$1" />
+<link rel="canonical" href="$2" />
+<meta name="description" content="$3" />
+<link rel="stylesheet" href="./styles.css" />
+
+<main>
+  $0
+</main>
