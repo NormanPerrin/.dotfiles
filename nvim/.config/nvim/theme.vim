@@ -4,7 +4,6 @@
 " Hex colour conversion functions borrowed from the theme "Desert256""
 
 let s:foreground = "c5c8c6"
-let s:background = "14282e"
 let s:selection = "373b41"
 let s:line = "282a2e"
 let s:comment = "969896"
@@ -19,7 +18,6 @@ let s:window = "4d5057"
 
 " Console 256 Colours
 if !has("gui_running")
-	let s:background = "303030"
 	let s:window = "5e5e5e"
 	let s:line = "3a3a3a"
 	let s:selection = "585858"
@@ -239,11 +237,11 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	endfun
 
 	" Vim Highlighting
-	call <SID>X("Normal", s:foreground, s:background, "")
+	call <SID>X("Normal", s:foreground, "none", "")
 	call <SID>X("LineNr", s:selection, "", "")
 	call <SID>X("NonText", s:selection, "", "")
 	call <SID>X("SpecialKey", s:selection, "", "")
-	call <SID>X("Search", s:background, s:yellow, "")
+	call <SID>X("Search", "none", s:yellow, "")
 	call <SID>X("TabLine", s:window, s:foreground, "reverse")
 	call <SID>X("TabLineFill", s:window, s:foreground, "reverse")
 	call <SID>X("StatusLine", s:window, s:yellow, "reverse")
@@ -256,14 +254,14 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 	call <SID>X("Question", s:green, "", "")
 	call <SID>X("WarningMsg", s:red, "", "")
 	call <SID>X("MatchParen", "", s:selection, "")
-	call <SID>X("Folded", s:comment, s:background, "")
-	call <SID>X("FoldColumn", "", s:background, "")
+	call <SID>X("Folded", s:comment, "none", "")
+	call <SID>X("FoldColumn", "", "none", "")
 	if version >= 700
 		call <SID>X("CursorLine", "", s:line, "none")
 		call <SID>X("CursorColumn", "", s:line, "none")
 		call <SID>X("PMenu", s:foreground, s:selection, "none")
 		call <SID>X("PMenuSel", s:foreground, s:selection, "reverse")
-		call <SID>X("SignColumn", "", s:background, "none")
+		call <SID>X("SignColumn", "", "none", "none")
 	end
 	if version >= 703
 		call <SID>X("ColorColumn", "", s:line, "none")
@@ -271,7 +269,7 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
 	" Standard Highlighting
 	call <SID>X("Comment", s:comment, "", "")
-	call <SID>X("Todo", s:comment, s:background, "")
+	call <SID>X("Todo", s:comment, "none", "")
 	call <SID>X("Title", s:comment, "", "")
 	call <SID>X("Identifier", s:red, "", "none")
 	call <SID>X("Statement", s:foreground, "", "")
@@ -373,15 +371,15 @@ if has("gui_running") || &t_Co == 88 || &t_Co == 256
 
 	" Diff Highlighting
 	call <SID>X("diffAdd", "", "4c4e39", "")
-	call <SID>X("diffDelete", s:background, s:red, "")
+	call <SID>X("diffDelete", "none", s:red, "")
 	call <SID>X("diffChange", "", "2B5B77", "")
 	call <SID>X("diffText", s:line, s:blue, "")
 
 	" ShowMarks Highlighting
-	call <SID>X("ShowMarksHLl", s:orange, s:background, "none")
-	call <SID>X("ShowMarksHLo", s:purple, s:background, "none")
-	call <SID>X("ShowMarksHLu", s:yellow, s:background, "none")
-	call <SID>X("ShowMarksHLm", s:aqua, s:background, "none")
+	call <SID>X("ShowMarksHLl", s:orange, "none", "none")
+	call <SID>X("ShowMarksHLo", s:purple, "none", "none")
+	call <SID>X("ShowMarksHLu", s:yellow, "none", "none")
+	call <SID>X("ShowMarksHLm", s:aqua, "none", "none")
 
 	" Lua Highlighting
 	call <SID>X("luaStatement", s:purple, "", "")
