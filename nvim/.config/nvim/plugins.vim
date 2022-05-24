@@ -12,21 +12,21 @@ Plug 'hrsh7th/cmp-path'                                            "   * path
 Plug 'L3MON4D3/LuaSnip'                                            " Lua snippets
 Plug 'saadparwaiz1/cmp_luasnip'                                    " cmp for lua snippets
 Plug 'onsails/lspkind-nvim'                                        " pretty suggestions in cmp
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 Plug 'nvim-telescope/telescope.nvim'                               " Telescope
 Plug 'nvim-lua/plenary.nvim'                                       "   * dependency
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }  "   * native fzf
 Plug 'nvim-telescope/telescope-project.nvim'                       "   * change between projects
-Plug 'nvim-telescope/telescope-file-browser.nvim'                  "   * file browser
 
 Plug 'kyazdani42/nvim-tree.lua'                                    " File explorer
 Plug 'voldikss/vim-floaterm'                                       " Floating shell
 Plug 'hoschi/yode-nvim'                                            " Side floating panel
 Plug 'hoob3rt/lualine.nvim'                                        " Status line
 Plug 'kyazdani42/nvim-web-devicons'                                " Dev Icons
+Plug 'lewis6991/gitsigns.nvim'
 
 Plug 'preservim/nerdcommenter'                                     " Comments
-Plug 'filipdutescu/renamer.nvim', { 'branch': 'master' }           " Renamer
 
 Plug 'junegunn/limelight.vim'                                      " Hightlight cursorline toggle
 Plug 'junegunn/goyo.vim'                                           " Center content toggle
@@ -36,8 +36,6 @@ Plug 'AndrewRadev/splitjoin.vim'                                   " Toggle inli
 Plug 'tpope/vim-speeddating'                                       " Increment dates with <C-a>
 
 Plug 'jbyuki/venn.nvim'                                            " Diagrams
-Plug 'tpope/vim-fugitive'                                          " Git for vim
-
 Plug 'preservim/vim-markdown'                                      " Markdown
 
 Plug 'hashivim/vim-terraform'                                      " Terraform files type and some commands
@@ -73,10 +71,6 @@ let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_fenced_languages = ["ts=typescript", "js=javascript"]
 
 lua << EOF
-  require('lspkind').init()
-  require('renamer').setup()
-  require('nvim-tree').setup()
-  require('yode-nvim').setup()
-  require('setup-config').setup()
+  require('setup-config').init()
   require('norman.globals').setup()
 EOF

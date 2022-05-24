@@ -1,12 +1,17 @@
 local M = {}
 
-function M.setup()
-  require('setup-config.lsp')
-  require('setup-config.cmp')
-  require('setup-config.tree-sitter')
-  require('setup-config.lualine')
-  require('setup-config.luasnip')
-  require('setup-config.tele')
+function M.init()
+  require('lspkind').init()
+  require('nvim-tree').setup()
+  require('yode-nvim').setup()
+  require('gitsigns').setup()
+  require('setup-config.tokyonight').init()
+  require('setup-config.lsp').init()
+  require('setup-config.cmp').init()
+  require('setup-config.tree-sitter').init()
+  require('setup-config.lualine').init()
+  require('setup-config.luasnip').init()
+  require('setup-config.floaterm').init()
 end
 
 return M

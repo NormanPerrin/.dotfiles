@@ -127,10 +127,6 @@ map <C-W>K :YodeLayoutShiftWinTop<CR>
 " tree
 nnoremap <leader>p :NvimTreeToggle<CR>
 
-" rename
-nnoremap <silent> <leader>rn <cmd>lua require('renamer').rename()<cr>
-vnoremap <silent> <leader>rn <cmd>lua require('renamer').rename()<cr>
-
 " luasnip
 imap <silent><expr> <C-k> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<C-k>'
 inoremap <silent> <C-j> <cmd>lua require'luasnip'.jump(-1)<CR>

@@ -1,24 +1,45 @@
-require'nvim-treesitter.configs'.setup {
-  -- One of "all", "maintained" (parsers with maintainers), or a list of languages
-  ensure_installed = {"typescript", "html", "bash", "c", "go", "dockerfile", "json", "jsonc", "json5", "lua", "markdown", "vim", "toml", "yaml", "hjson", "css", "python", "rust"},
+local M = {}
 
-  -- Install languages synchronously (only applied to `ensure_installed`)
-  sync_install = false,
+M.init = function()
+  require'nvim-treesitter.configs'.setup{
+    ensure_installed = {
+      'bash',
+      'css',
+      'dockerfile',
+      'go',
+      'gomod',
+      'graphql',
+      'html',
+      'javascript',
+      'jsdoc',
+      'json',
+      'lua',
+      'python',
+      'rust',
+      'svelte',
+      'tsx',
+      'typescript',
+      'yaml',
+    },
+    highlight = {
+      enable = true
+    },
+    incremental_selection = {
+      enable = true,
+      keymaps = {
+        init_selection = "gnn",
+        node_incremental = "grn",
+        scope_incremental = "grc",
+        node_decremental = "grm",
+      },
+    },
+    indent = {
+      enable = true
+    }
+  }
 
-  -- List of parsers to ignore installing
-  -- ignore_install = { "javascript" },
+  --vim.cmd[[set foldmethod=expr]]
+  --vim.cmd[[set foldexpr=nvim_treesitter#foldexpr()]]
+end
 
-  highlight = {
-    -- `false` will disable the whole extension
-    enable = true,
-
-    -- list of language that will be disabled
-    -- disable = { "c", "rust" },
-
-    -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-    -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-    -- Using this option may slow down your editor, and you may see some duplicate highlights.
-    -- Instead of true it can also be a list of languages
-    additional_vim_regex_highlighting = false,
-  },
-}
+return M
