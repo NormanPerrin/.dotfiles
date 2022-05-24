@@ -11,7 +11,6 @@ function M.init()
   require('setup-config.tree-sitter').init()
   require('setup-config.lualine').init()
   require('setup-config.luasnip').init()
-  require('setup-config.floaterm').init()
 end
 
 return M

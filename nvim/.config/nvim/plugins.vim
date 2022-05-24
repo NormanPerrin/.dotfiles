@@ -20,7 +20,6 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }  "   * native 
 Plug 'nvim-telescope/telescope-project.nvim'                       "   * change between projects
 
 Plug 'kyazdani42/nvim-tree.lua'                                    " File explorer
-Plug 'voldikss/vim-floaterm'                                       " Floating shell
 Plug 'hoschi/yode-nvim'                                            " Side floating panel
 Plug 'hoob3rt/lualine.nvim'                                        " Status line
 Plug 'kyazdani42/nvim-web-devicons'                                " Dev Icons
@@ -46,14 +45,6 @@ call plug#end()
 
 
 " ---------------------- CONFIG ---------------------- "
-
-" floatterm
-let g:floaterm_keymap_new    = '<leader>tn'
-let g:floaterm_keymap_toggle = '<leader>tt'
-let g:floaterm_keymap_next   = '<leader>tn'
-let g:floaterm_keymap_prev   = '<leader>tp'
-let g:floaterm_keymap_kill   = '<leader>tk'
-let g:floaterm_gitcommit     = 'vsplit'
 
 " limelight
 let g:limelight_conceal_ctermfg = 'gray'
