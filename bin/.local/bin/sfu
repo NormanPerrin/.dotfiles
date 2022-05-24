@@ -1,4 +1,16 @@
-#!/bin/sh
+#!/bin/bash
 
-sfeed_update 2>/dev/null
-echo 'Updated!'
+good_filepath="/tmp/$(random_hash)"
+bad_filepath="/tmp/$(random_hash)"
+
+sfeed_update 2>&1 |tee \
+  >(rg 'OK$' > "$good_filepath") \
+  >(rg 'FAIL \(FETCH\)$' > "$bad_filepath") >/dev/null
+
+good_updates=$(wc -l <"$good_filepath" |sed 's/ //g')
+bad_updates=$(wc -l <"$bad_filepath" |sed 's/ //g')
+bad_entries=$(sed -r 's/^.*\] (.*)  .*/- \1/' $bad_filepath)
+
+terminal-notifier -title 'RSS' -subtitle "\✔️ $good_updates ❌ $bad_updates" -message " $bad_entries"
+
+rm $good_filepath $bad_filepath
