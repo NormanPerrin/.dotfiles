@@ -47,8 +47,10 @@ nnoremap <leader>!v :setlocal ve=<cr>
 " | <C-w> f                              | Split window with file under cursor.                 |
 " | <C-w-_>                              | Max split window With.                               |
 " | <C-w-|>                              | Max split window Height.                             |
+" | <C-w-=>                              | 50% split window With/Height.                        |
 " | <C-w-K>                              | Position window at Bottom.                           |
 " | <C-w-H>                              | Position window at Left.                             |
+" | <C-w-T>                              | Split pane into window.                              |
 " | <C-o>                                | Go back from regex to original position              |
 " | <C-t>                                | Go back from definition to original position         |
 " | g[k-j]                               | Move though breaked lines                            |
