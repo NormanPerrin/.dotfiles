@@ -69,6 +69,10 @@ M.init = function()
     on_attach = on_attach
   }
 
+  lspconfig.rust_analyzer.setup{
+    on_attach = on_attach
+  }
+
   lspconfig.sumneko_lua.setup{
     on_attach = on_attach,
     settings = {
