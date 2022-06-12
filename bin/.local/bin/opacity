@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ -z $1 ]; then
+  echo No selection
+  exit 1
+fi
+
+alacritty_dir="$XDG_CONFIG_HOME/alacritty"
+
+sed -i.bak "s/background_opacity: 0\../background_opacity: 0.$1/" "$alacritty_dir/alacritty.yml" \
+  && rm "$alacritty_dir/alacritty.yml.bak"

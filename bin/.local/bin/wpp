@@ -1,0 +1,14 @@
+#!/bin/sh
+
+wallpapers="$HOME/Documents/wallpapers"
+
+bg_selection="$(fd . "$wallpapers" -x basename |fzf --layout=reverse-list)"
+
+if [ -z $bg_selection ]; then
+  echo 'No selection'
+  exit 1
+fi
+
+bg_path="$wallpapers/$bg_selection"
+
+osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$bg_path\""
