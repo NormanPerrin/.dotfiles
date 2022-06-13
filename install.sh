@@ -6,7 +6,7 @@ brew tap homebrew/cask-fonts hashicorp/tap
 
 brew install --cask rectangle 1password 1password-cli discord slack whatsapp obs postman font-jetbrains-mono-nerd-font robo-3t wkhtmltopdf docker
 
-brew install nvim nvim deno rust yarn awscli tmux stow gpg pandoc imagemagick unoconv ffmpeg jq yq mysql rg fd fzf bat tree youtube-dl shellcheck aspell mpv nq redis hashicorp/tap/terraform neofetch neomutt isync pass lynx urlview notmuch abook qrencode msmtp luarocks hashicorp/tap/terraform-ls ninja lazydocker rust-analyzer
+brew install nvim deno rust yarn awscli tmux stow gpg pandoc imagemagick unoconv ffmpeg jq yq mysql rg fd fzf bat tree youtube-dl shellcheck aspell mpv nq redis hashicorp/tap/terraform neofetch neomutt isync pass lynx urlview notmuch abook qrencode msmtp luarocks hashicorp/tap/terraform-ls ninja lazydocker rust-analyzer
 
 npm i -g \
   wscat \

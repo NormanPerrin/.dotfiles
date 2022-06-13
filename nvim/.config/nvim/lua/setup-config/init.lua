@@ -11,6 +11,7 @@ function M.init()
   require('setup-config.tree-sitter').init()
   require('setup-config.lualine').init()
   require('setup-config.luasnip').init()
+  require('setup-config.dap').init()
 end
 
 return M

@@ -9,10 +9,13 @@ Plug 'hrsh7th/cmp-nvim-lua'                                        "   * lua
 Plug 'hrsh7th/cmp-buffer'                                          "   * buffer
 Plug 'hrsh7th/cmp-path'                                            "   * path
 
+Plug 'mfussenegger/nvim-dap'                                       " Debugger
+Plug 'rcarriga/nvim-dap-ui'                                        "   * UI
+Plug 'theHamsta/nvim-dap-virtual-text'                             "   * peak values
+
 Plug 'L3MON4D3/LuaSnip'                                            " Lua snippets
 Plug 'saadparwaiz1/cmp_luasnip'                                    " cmp for lua snippets
 Plug 'onsails/lspkind-nvim'                                        " pretty suggestions in cmp
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 Plug 'nvim-telescope/telescope.nvim'                               " Telescope
 Plug 'nvim-lua/plenary.nvim'                                       "   * dependency
@@ -24,6 +27,7 @@ Plug 'hoschi/yode-nvim'                                            " Side floati
 Plug 'hoob3rt/lualine.nvim'                                        " Status line
 Plug 'kyazdani42/nvim-web-devicons'                                " Dev Icons
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
 Plug 'preservim/nerdcommenter'                                     " Comments
 
@@ -39,8 +43,6 @@ Plug 'preservim/vim-markdown'                                      " Markdown
 
 Plug 'hashivim/vim-terraform'                                      " Terraform files type and some commands
 Plug 'ekalinin/Dockerfile.vim'                                     " Dockerfile file type and syntax...
-
-Plug 'ThePrimeagen/vim-be-good'                                    " Vim practice
 call plug#end()
 
 
