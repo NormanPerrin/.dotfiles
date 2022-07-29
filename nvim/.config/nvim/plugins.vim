@@ -9,6 +9,8 @@ Plug 'hrsh7th/cmp-nvim-lua'                                        "   * lua
 Plug 'hrsh7th/cmp-buffer'                                          "   * buffer
 Plug 'hrsh7th/cmp-path'                                            "   * path
 
+Plug 'https://github.com/github/copilot.vim'
+
 Plug 'mfussenegger/nvim-dap'                                       " Debugger
 Plug 'rcarriga/nvim-dap-ui'                                        "   * UI
 Plug 'theHamsta/nvim-dap-virtual-text'                             "   * peak values

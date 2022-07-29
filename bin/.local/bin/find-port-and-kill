@@ -1,0 +1,12 @@
+#!/bin/sh
+
+FIND_PORT_OUTPUT="$(find-port $1)"
+
+if [ -z $FIND_PORT_OUTPUT ] ; then
+  echo "Port not found"
+  return 0
+fi
+
+PORT="$(echo $FIND_PORT_OUTPUT | awk '{ print $2 }')"
+
+kill -9 $PORT

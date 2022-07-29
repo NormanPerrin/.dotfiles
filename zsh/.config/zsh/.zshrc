@@ -7,6 +7,8 @@ export SFEED_PLUMBER='sfeed_open'
 export SFEED_YANKER='sfeed_copy'
 export SFEED_URL_FILE="$HOME/.sfeed/sfeedrc"
 
+export MPV_PLAYLISTS_DIR="$XDG_DATA_HOME/mpv/playlists"
+
 export BIN="$HOME/.local/bin"
 export CODE="$HOME/.local/code"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
@@ -104,6 +106,7 @@ source "$XDG_CONFIG_HOME/zsh/functions/git.zsh"
 source "$XDG_CONFIG_HOME/zsh/functions/history-substring-search.zsh"
 source "$XDG_CONFIG_HOME/zsh/functions/history.zsh"
 source "$XDG_CONFIG_HOME/zsh/functions/server.zsh"
+source "$XDG_CONFIG_HOME/zsh/functions/other.zsh"
 # Themes
 source "$XDG_CONFIG_HOME/zsh/themes/robbyrussell.zsh"
 # Alias
