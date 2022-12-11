@@ -1,0 +1,8 @@
+#!/bin/sh
+
+for song in "$MUSIC"/*; do
+  grep_result="$(rg -l "$song" "$MPV_PLAYLISTS_DIR" | wc -l)"
+  if [ "$grep_result" -eq 0 ]; then
+    echo "$song"
+  fi
+done

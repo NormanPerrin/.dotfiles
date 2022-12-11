@@ -1,10 +1,20 @@
 #!/bin/sh
 
-selection="$(fd . "$MPV_PLAYLISTS_DIR" -d 1 |sed 's@'"$MPV_PLAYLISTS_DIR"\/'@@' |fzf)"
+
+alias custom_fzf='fzf --reverse --height 40% --layout=reverse-list --border'
+
+playlists="$(fd . "$MPV_PLAYLISTS_DIR" -d 1)"
+playlists="$(echo "$playlists"; echo "all")"
+
+selection="$(echo "$playlists" |sed 's@'"$MPV_PLAYLISTS_DIR"/'@@' | custom_fzf --prompt='Music type: ')"
 
 if [ -z "$selection" ]; then
   echo "No selection"
   exit 0
 fi
 
-mpv --shuffle --playlist="$MPV_PLAYLISTS_DIR/$selection"
+if [ "$selection" = "all" ]; then
+  mpv --shuffle "$MUSIC"/*
+else
+  mpv --shuffle --playlist="$MPV_PLAYLISTS_DIR/$selection"
+fi
