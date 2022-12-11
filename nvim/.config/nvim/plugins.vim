@@ -1,7 +1,9 @@
 call plug#begin('$XDG_CONFIG_HOME/nvim/bundle')
 Plug 'neovim/nvim-lspconfig'                                       " lsp core config
-Plug 'williamboman/nvim-lsp-installer'                             " lsp installer
+Plug 'williamboman/mason.nvim'                                     " lsp installer
 Plug 'nvim-treesitter/nvim-treesitter'                             " better syntax
+
+Plug 'jose-elias-alvarez/null-ls.nvim'                             " integrate linters, code actions, etc.
 
 Plug 'hrsh7th/nvim-cmp'                                            " completition
 Plug 'hrsh7th/cmp-nvim-lsp'                                        "   * lsp

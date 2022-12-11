@@ -36,20 +36,28 @@ M.init = function()
     },
   }
 
-  require'dapui'.setup{
-    sidebar = {
-      elements = {
-        { id = "breakpoints", size = 0.25 },
-        { id = "scopes", size = 0.25 },
-        { id = "stacks", size = 0.25 },
+  require('dapui').setup({
+    layouts = {
+      {
+        elements = {
+          'scopes',
+          'breakpoints',
+          'stacks',
+          'watches',
+        },
+        size = 40,
+        position = 'left',
+      },
+      {
+        elements = {
+          'repl',
+          'console',
+        },
+        size = 10,
+        position = 'bottom',
       },
     },
-    tray = {
-      elements = { "repl" },
-      size = 10,
-      position = "bottom",
-    },
-  }
+  })
 
   local api = vim.api
   local keymap_restore = {}

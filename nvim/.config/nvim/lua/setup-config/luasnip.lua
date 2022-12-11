@@ -13,8 +13,8 @@ M.init = function()
       return content
   end
 
-  local html_template = read_file('/Users/nperrin/.local/share/templates/html/html')
-  local go_template = read_file('/Users/nperrin/.local/share/templates/go/main')
+  local html_template = read_file('/Users/normanperrin/.local/share/templates/html/html')
+  local go_template = read_file('/Users/normanperrin/.local/share/templates/go/main')
 
   ls.config.set_config {
     updateevents = "TextChanged,TextChangedI",
