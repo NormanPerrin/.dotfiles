@@ -1,0 +1,6 @@
+#!/bin/sh
+
+dst_dir=me:/home/rex/music/
+src_dir="$MUSIC"/
+
+scp -r "$src_dir" "$dst_dir"
