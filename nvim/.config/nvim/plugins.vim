@@ -26,7 +26,7 @@ Plug 'nvim-lua/plenary.nvim'                                       "   * depende
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }  "   * native fzf
 Plug 'nvim-telescope/telescope-project.nvim'                       "   * change between projects
 
-Plug 'kyazdani42/nvim-tree.lua'                                    " File explorer
+Plug 'nvim-tree/nvim-tree.lua'                                     " File explorer
 Plug 'hoschi/yode-nvim'                                            " Side floating panel
 Plug 'hoob3rt/lualine.nvim'                                        " Status line
 Plug 'kyazdani42/nvim-web-devicons'                                " Dev Icons

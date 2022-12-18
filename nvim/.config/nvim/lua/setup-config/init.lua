@@ -1,8 +1,7 @@
 local M = {}
 
-function M.init()
+M.init = function()
   require('lspkind').init()
-  require('nvim-tree').setup()
   require('yode-nvim').setup()
   require('gitsigns').setup()
   require("mason").setup()
@@ -11,9 +10,9 @@ function M.init()
   require('setup-config.cmp').init()
   require('setup-config.tree-sitter').init()
   require('setup-config.lualine').init()
-  require('setup-config.luasnip').init()
   require('setup-config.dap').init()
   require('setup-config.null-ls').init()
+  require('setup-config.nvim-tree').init()
 end
 
 return M
