@@ -4,6 +4,12 @@ nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 " Write file and execute it
 nnoremap <leader><leader>x :w<CR> :source %<CR>
 
+" Replace word under cursor
+nnoremap <space>r :%s/<C-R><C-W>/<C-R><C-W>/gc<Left><Left><Left>
+
+" Make current file executable
+nnoremap <space>ex :!chmod +x %<CR>
+
 " credits: https://vimtricks.com/p/clear-search-highlight
 nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
 
@@ -93,11 +99,6 @@ nnoremap <leader>!v :setlocal ve=<cr>
 " goyo
 nnoremap <leader>z :Goyo<CR>
 
-" rss_feed
-autocmd BufRead *.rss_feed nnoremap gx 1jwy$1k0 :!seeContent<CR><CR>0
-autocmd BufRead *.rss_feed nnoremap j 4jzz
-autocmd BufRead *.rss_feed nnoremap k 4kzz
-
 " .diagram files
 autocmd BufNewFile,BufRead *.diagram :setlocal ve=all
 autocmd BufNewFile,BufRead *.diagram nnoremap J <C-v>j:VBox<cr>
@@ -106,29 +107,5 @@ autocmd BufNewFile,BufRead *.diagram nnoremap H <C-v>h:VBox<cr>
 autocmd BufNewFile,BufRead *.diagram nnoremap L <C-v>l:VBox<cr>
 autocmd BufNewFile,BufRead *.diagram vnoremap f :VBox<cr>
 
-" Telescope
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>gf <cmd>Telescope git_files<cr>
-nnoremap <leader>gr <cmd>Telescope live_grep<cr>
-nnoremap <leader>lr <cmd>Telescope lsp_references<cr>
-nnoremap <leader>ld <cmd>Telescope lsp_definitions<cr>
-nnoremap <leader>lt <cmd>Telescope lsp_type_definitions<cr>
-nnoremap <leader>li <cmd>Telescope lsp_implementations<cr>
-nnoremap <leader>en <cmd>lua require('norman.tele').edit_neovim()<CR>
-
-" Yode side editor
-map <Leader>yc :YodeCreateSeditorFloating<CR>
-map <Leader>yr :YodeCreateSeditorReplace<CR>
-nmap <Leader>bd :YodeBufferDelete<CR>
-imap <Leader>bd <esc>:YodeBufferDelete<CR>
-map <C-W>r :YodeLayoutShiftWinDown<CR>
-map <C-W>R :YodeLayoutShiftWinUp<CR>
-map <C-W>J :YodeLayoutShiftWinBottom<CR>
-map <C-W>K :YodeLayoutShiftWinTop<CR>
-
 " tree
 nnoremap <leader>p :NvimTreeToggle<CR>
-
-" luasnip
-imap <silent><expr> <C-k> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<C-k>'
-inoremap <silent> <C-j> <cmd>lua require'luasnip'.jump(-1)<CR>

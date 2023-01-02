@@ -1,7 +1,7 @@
 local M = {}
 
 M.init = function()
-  require'nvim-treesitter.configs'.setup{
+  require 'nvim-treesitter.configs'.setup {
     ensure_installed = {
       'bash',
       'css',
@@ -16,13 +16,13 @@ M.init = function()
       'lua',
       'python',
       'rust',
-      'svelte',
-      'tsx',
       'typescript',
       'yaml',
     },
+    sync_install = false,
     highlight = {
-      enable = true
+      enable = true,
+      additional_vim_regex_highlighting = false
     },
     incremental_selection = {
       enable = true,

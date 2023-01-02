@@ -1,6 +1,6 @@
 #!/bin/sh
 
 src_dir=me:/home/rex/music/
-dst_dir="$MUSIC"/
+dst_dir="$MUSIC"
 
 scp -r "$src_dir" "$dst_dir"

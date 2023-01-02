@@ -6,15 +6,15 @@ M.init = function()
   local s = ls.parser.parse_snippet
 
   local function read_file(path)
-      local file = io.open(path, "rb") -- r read mode and b binary mode
-      if not file then return nil end
-      local content = file:read "*a" -- *a or *all reads the whole file
-      file:close()
-      return content
+    local file = io.open(path, "rb") -- r read mode and b binary mode
+    if not file then return nil end
+    local content = file:read "*a" -- *a or *all reads the whole file
+    file:close()
+    return content
   end
 
-  local html_template = read_file('/Users/normanperrin/.local/share/templates/html/html')
-  local go_template = read_file('/Users/normanperrin/.local/share/templates/go/main')
+  local html_template = read_file('/Users/nperrin/.local/share/templates/html/html')
+  local go_template = read_file('/Users/nperrin/.local/share/templates/go/main')
 
   ls.config.set_config {
     updateevents = "TextChanged,TextChangedI",

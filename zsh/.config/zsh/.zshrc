@@ -19,7 +19,7 @@ export PATH="/opt/homebrew/bin:$BIN:$CARGO_HOME:$GOPATH/bin:$LSP_SERVERS:$PATH"
 
 # Export other
 export TEMPLATES="$HOME/.local/templates"
-export MUSIC="$HOME/Music/own"
+export MUSIC="$HOME/Music/music"
 export VIDEOS="$HOME/Movies"
 
 # Locale
@@ -64,33 +64,6 @@ if [[ -n $SSH_CONNECTION ]]; then
 else
   export EDITOR='nvim'
 fi
-
-# Functions
-cdc () {
-	cd $CODE
-	response="$(fd -t d -E '*node_modules*' -d 1 . |fzf --preview='tree -L 2 -I 'node_modules' {}' --bind='space:toggle-preview')"
-	[ -z "$response" ] && cd -
-	[ ! -z "$response" ] && cd "$CODE/$response"
-}
-cdv () {
-	cd "$HOME/Documents"
-	response="$(fd -t d -E '*node_modules*' . |fzf --preview='tree -L 2 -I 'node_modules' {}' --bind='space:toggle-preview')"
-	[ -z "$response" ] && cd -
-	[ ! -z "$response" ] && cd "$HOME/Documents/$response"
-}
-# Edition
-vd () {
-	cd "$HOME/Documents"
-	response="$(fd -t f -E '*node_modules*' -E '*.ico' -E '*.docx' -E '*.pdf' -E '*.png' -E '*.gz' -E '*.jpg' -E '*.mkv' -E '*.jpeg' . |fzf --preview='bat {}' --bind='space:toggle-preview')"
-	cd -
-	[ ! -z "$response" ] && vi "$HOME/Documents/$response"
-}
-vc () {
-	cd "$CODE"
-	response="$(fd -t f -E '*node_modules*' -E '*.ico' -E '*.docx' -E '*.pdf' -E '*.png' -E '*.gz' -E '*.jpg' -E '*.mkv' -E '*.jpeg' . |fzf --preview='bat {}' --bind='space:toggle-preview')"
-	cd -
-	[ ! -z "$response" ] && vi "$$CODE/$response"
-}
 
 # Activate auto complete
 autoload -U compinit; compinit

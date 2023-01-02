@@ -1,4 +1,5 @@
 # Credits to https://codemadness.org/paste-service.html for the idea!
+
 pastesrv() {
   if [ -z "$1" ]; then
     echo 'Error, not output name. Usage:'

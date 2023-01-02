@@ -1,6 +1,6 @@
 local M = {}
 
-M.init = function ()
+M.init = function()
   require('lualine').setup {
     options = {
       extensions = { 'fzf', 'quickfix', 'nvim-tree' },

@@ -1,52 +1,59 @@
 call plug#begin('$XDG_CONFIG_HOME/nvim/bundle')
-Plug 'neovim/nvim-lspconfig'                                       " lsp core config
-Plug 'williamboman/mason.nvim'                                     " lsp installer
-Plug 'nvim-treesitter/nvim-treesitter'                             " better syntax
 
-Plug 'jose-elias-alvarez/null-ls.nvim'                             " integrate linters, code actions, etc.
+" Syntax
+Plug 'nvim-treesitter/nvim-treesitter'
 
-Plug 'hrsh7th/nvim-cmp'                                            " completition
-Plug 'hrsh7th/cmp-nvim-lsp'                                        "   * lsp
-Plug 'hrsh7th/cmp-nvim-lua'                                        "   * lua
-Plug 'hrsh7th/cmp-buffer'                                          "   * buffer
-Plug 'hrsh7th/cmp-path'                                            "   * path
+" LSP support
+Plug 'VonHeikemen/lsp-zero.nvim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
 
-Plug 'https://github.com/github/copilot.vim'
+" Completion
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lua'
 
-Plug 'mfussenegger/nvim-dap'                                       " Debugger
-Plug 'rcarriga/nvim-dap-ui'                                        "   * UI
-Plug 'theHamsta/nvim-dap-virtual-text'                             "   * peak values
+" Snippets
+Plug 'L3MON4D3/LuaSnip'
+Plug 'rafamadriz/friendly-snippets'
 
-Plug 'L3MON4D3/LuaSnip'                                            " Lua snippets
-Plug 'saadparwaiz1/cmp_luasnip'                                    " cmp for lua snippets
-Plug 'onsails/lspkind-nvim'                                        " pretty suggestions in cmp
+" DAP
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'theHamsta/nvim-dap-virtual-text'
 
-Plug 'nvim-telescope/telescope.nvim'                               " Telescope
-Plug 'nvim-lua/plenary.nvim'                                       "   * dependency
-Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }  "   * native fzf
-Plug 'nvim-telescope/telescope-project.nvim'                       "   * change between projects
+" REPL
+Plug 'hkupty/iron.nvim'
 
-Plug 'nvim-tree/nvim-tree.lua'                                     " File explorer
-Plug 'hoschi/yode-nvim'                                            " Side floating panel
-Plug 'hoob3rt/lualine.nvim'                                        " Status line
-Plug 'kyazdani42/nvim-web-devicons'                                " Dev Icons
+" Editor style
+Plug 'nvim-tree/nvim-tree.lua'
+Plug 'hoob3rt/lualine.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
-Plug 'preservim/nerdcommenter'                                     " Comments
+Plug 'preservim/nerdcommenter'
 
-Plug 'junegunn/limelight.vim'                                      " Hightlight cursorline toggle
-Plug 'junegunn/goyo.vim'                                           " Center content toggle
+" Presentation
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
 
-Plug 'AndrewRadev/switch.vim'                                      " Toggle values
-Plug 'AndrewRadev/splitjoin.vim'                                   " Toggle inline and block code
-Plug 'tpope/vim-speeddating'                                       " Increment dates with <C-a>
+" Edition
+Plug 'https://github.com/github/copilot.vim'
+Plug 'AndrewRadev/switch.vim'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'tpope/vim-speeddating'
 
-Plug 'jbyuki/venn.nvim'                                            " Diagrams
-Plug 'preservim/vim-markdown'                                      " Markdown
+" Diagrams
+Plug 'jbyuki/venn.nvim'
 
-Plug 'hashivim/vim-terraform'                                      " Terraform files type and some commands
-Plug 'ekalinin/Dockerfile.vim'                                     " Dockerfile file type and syntax...
+" Markdown
+Plug 'preservim/vim-markdown'
+
 call plug#end()
 
 
