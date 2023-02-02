@@ -9,4 +9,4 @@ if [ -z "$response" ]; then
   exit 0
 fi
 
-cd "$response" || exit 1 > /dev/null
+cd "$CODE/$response" || exit 1
