@@ -1,0 +1,28 @@
+#!/bin/sh
+
+echo '+ Creating typescript project'
+
+printf "Project name: " && read -r project_name
+ugly_name="$(slugify "$project_name")"
+
+# check if project already exists
+if [ -d "$CODE/$ugly_name" ]; then
+  printf "[!] Delete existing project? [y/N] " && read -r delete
+
+  if [ "$delete" = "y" ]; then
+    rm -rf "$CODE/$ugly_name"
+  else
+    exit 1
+  fi
+fi
+
+project_dir="$CODE/$ugly_name"
+mkdir -p "$project_dir/src"
+touch "$project_dir/src/index.ts"
+
+cp "$XDG_DATA_HOME/project-base-files/typescript/"* "$project_dir"
+sed -i.bak "s/@name@/$ugly_name/g" "$project_dir/package.json" && rm "$project_dir/package.json.bak"
+
+cd "$project_dir" && pnpm install
+
+nvim -i NONE -c 'cd %:h' "$project_dir"

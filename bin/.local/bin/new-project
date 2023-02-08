@@ -1,0 +1,14 @@
+#!/bin/sh
+
+options='typescript'
+selected="$(echo "$options" |xargs -n 1 |custom_fzf --prompt='Select project type: ')"
+
+case $selected in
+  typescript)
+    create-typescript-project
+    ;;
+  *)
+    echo 'No project selected'
+    exit 0
+    ;;
+esac
