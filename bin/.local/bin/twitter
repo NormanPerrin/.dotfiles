@@ -1,3 +1,0 @@
-#!/bin/sh
-
-SFEED_URL_FILE="$HOME/.sfeed/twitter_feedrc" sfeed_curses "$XDG_DATA_HOME/feeds/twitter/*"

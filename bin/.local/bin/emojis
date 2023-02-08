@@ -1,3 +1,0 @@
-#!/bin/sh
-
-echo "$(fzf <~/.local/share/emojis |cut -d '	' -f 2)"
