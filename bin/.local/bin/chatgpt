@@ -1,0 +1,52 @@
+#!/bin/zsh
+
+source $HOME/.zshrc
+
+# schema (id INTEGER PRIMARY KEY, prompt TEXT, response TEXT, created_at DATETIME DEFAULT CURRENT_TIMESTAMP)
+history_db_path=$XDG_DATA_HOME/openai/db.sqlite3
+
+if [ "$1" = 'history' ]; then
+  sqlite3 "$history_db_path" "SELECT * FROM chat;"
+  exit 0
+fi
+
+if [ "$1" = 'clear' ]; then
+  sqlite3 "$history_db_path" "DELETE FROM chat;"
+  exit 0
+fi
+
+if [ "$1" = 'help' ]; then
+  echo "Usage: chatgpt [history|clear|ask]"
+  exit 0
+fi
+
+if [ "$1" = 'ask' ]; then
+  prompt="$2"
+else
+  tmpfile=$(mktemp)
+  v "$tmpfile"
+  prompt=$(cat "$tmpfile")
+fi
+
+if [ -z "$prompt" ]; then
+  echo "No prompt given"
+  exit 1
+fi
+
+# save the prompt to the chat database
+sqlite3 "$history_db_path" "INSERT INTO chat (prompt) VALUES ('$prompt');"
+
+response=$(openai api chat_completions.create \
+  -m gpt-3.5-turbo \
+  -t 0.1 \
+  -M 2000 \
+  -g user "$prompt")
+
+echo "$response"
+
+sanitized_response=$(echo "$response" |sed -e "s/'/''/g")
+sqlite3 "$history_db_path" "UPDATE chat SET response = '$sanitized_response' WHERE id = (SELECT MAX(id) FROM chat);"
+
+if [ "$1" != 'ask' ]; then
+  rm "$tmpfile"
+fi

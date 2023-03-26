@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+source $HOME/.zshrc
+
+tmpfile=$(mktemp)
+v "$tmpfile"
+query=$(cat "$tmpfile")
+
+tmux new-window -n chatgpt -d "chatgpt ask '$query' & while [ 1 ]; do sleep 1; done"
+tmux select-window -t chatgpt
