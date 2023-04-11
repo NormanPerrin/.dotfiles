@@ -1,0 +1,17 @@
+#!/bin/sh
+
+message="$1"
+
+if [ -z "$message" ]; then
+  tmpfile=$(mktemp)
+  nvim -i NONE -c 'set ft=markdown' -c 'startinsert' "$tmpfile"
+  message=$(cat "$tmpfile")
+fi
+
+twurl /2/tweets \
+  --data "$(jo text="$message")" \
+  --header 'Content-Type: application/json' \
+  --consumer-key "$(pass tw/api-key)" \
+  --consumer-secret "$(pass tw/api-key-secret)" \
+  --access-token "$(pass tw/access-token)" \
+  --token-secret "$(pass tw/access-token-secret)"

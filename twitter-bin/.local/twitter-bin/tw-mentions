@@ -1,0 +1,22 @@
+#!/bin/sh
+
+tweet_url='https://twitter.com/x/status/'
+
+# list my mentions
+mentions=$(twurl "/1.1/statuses/mentions_timeline.json" \
+  --consumer-key "$(pass tw/api-key)" \
+  --consumer-secret "$(pass tw/api-key-secret)" \
+  --access-token "$(pass tw/access-token)" \
+  --token-secret "$(pass tw/access-token-secret)" \
+  | jq -r '.[] | [.user.screen_name, .text, .id_str] | @tsv')
+
+rm -fr /tmp/mentions.md
+
+echo "$mentions" |while read -r line; do
+  printf '# @%s\n%s\n> %s\n\n' \
+    "$(echo "$line" | cut -f1)" \
+    "$(echo "$line" | cut -f2)" \
+    "$(echo "$line" | cut -f3 | xargs -I{} echo "$tweet_url{}")" >>/tmp/mentions.md
+done
+
+nvim -i NONE /tmp/mentions.md && rm -fr /tmp/mentions.md

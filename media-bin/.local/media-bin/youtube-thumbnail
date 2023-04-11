@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ -z "$1" ] || [ -z "$2" ]; then
+    echo "Usage: $0 <youtube-url> <output-file>"
+    exit 1
+fi
+
+url="https://img.youtube.com/vi/$1/maxresdefault.jpg"
+
+curl "$url" -o "$2"

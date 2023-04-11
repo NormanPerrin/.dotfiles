@@ -19,8 +19,6 @@ alias 7='cd -7'
 alias 8='cd -8'
 alias 9='cd -9'
 
-alias cdc='source cdc'
-
 alias md='mkdir -pv'
 alias rd=rmdir
 
@@ -31,3 +29,30 @@ alias la='ls -lAh'
 
 # Shortcuts
 alias cdb="cd $BIN"
+
+function cdc() {
+  cd "$CODE"
+
+  response="$(fd -t d -E '*node_modules*' -d 1 . |fzf --preview='tree -L 2 -I 'node_modules' {}' --bind='space:toggle-preview' --prompt="Project: ")"
+
+  if [ -z "$response" ]; then
+    cd - > /dev/null
+    return
+  fi
+
+  cd "$CODE/$response"
+}
+
+function cdv() {
+  cd "$CODE"
+
+  response="$(fd -t d -E '*node_modules*' -d 1 . |fzf --preview='tree -L 2 -I 'node_modules' {}' --bind='space:toggle-preview' --prompt="Project: ")"
+
+  if [ -z "$response" ]; then
+    cd - > /dev/null
+    return
+  fi
+
+  cd "$CODE/$response"
+  v .
+}

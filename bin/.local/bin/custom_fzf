@@ -1,4 +1,4 @@
 #!/bin/sh
 
 # pass input parameters to fzf
-fzf --reverse --height 40% --layout=reverse-list --border "$@"
+fzf-tmux --reverse --layout=reverse-list --border "$@"

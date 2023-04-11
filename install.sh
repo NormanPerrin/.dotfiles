@@ -8,6 +8,8 @@ brew install --cask rectangle 1password 1password-cli discord slack whatsapp obs
 
 brew install node nvim deno rust yarn awscli tmux stow gpg pandoc imagemagick unoconv ffmpeg jq mysql rg fd fzf bat tree youtube-dl shellcheck aspell mpv nq redis hashicorp/tap/terraform neofetch neomutt isync pass lynx urlview notmuch abook qrencode msmtp luarocks hashicorp/tap/terraform-ls ninja lazydocker rust-analyzer
 
+gem install twurl
+
 npm i -g \
   wscat \
   typescript \
@@ -51,3 +53,5 @@ curl -s https://kristaps.bsd.lv/lowdown/snapshots/lowdown.tar.gz > lowdown.tar.g
 # Fonts
 mkdir -p $XDG_DATA_HOME/fonts
   && git clone git@github.com/xero/figlet-fonts.git $XDG_DATA_HOME/fonts/figlet-fonts
+
+# pip3 install termdown

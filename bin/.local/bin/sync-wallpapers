@@ -1,0 +1,15 @@
+#!/bin/sh
+
+LOCAL_PATH="$HOME/Documents/wallpapers/"
+REMOTE_PATH=me:/home/rex/wallpapers/
+
+
+if [ -z "$1" ]; then
+  rsync -az --progress $REMOTE_PATH "$LOCAL_PATH"
+  rsync -az --progress "$LOCAL_PATH" $REMOTE_PATH
+  exit
+fi
+
+if [ "$1" = "-d" ]; then
+  rsync -az --progress --delete "$LOCAL_PATH" $REMOTE_PATH
+fi

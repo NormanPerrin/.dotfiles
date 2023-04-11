@@ -9,6 +9,11 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/mason.nvim'
 Plug 'williamboman/mason-lspconfig.nvim'
 
+" Telescope
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+
 " Completion
 Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-buffer'
@@ -16,6 +21,7 @@ Plug 'hrsh7th/cmp-path'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-nvim-lua'
+Plug 'jackMort/ChatGPT.nvim'
 
 " Snippets
 Plug 'L3MON4D3/LuaSnip'
@@ -30,6 +36,7 @@ Plug 'theHamsta/nvim-dap-virtual-text'
 Plug 'hkupty/iron.nvim'
 
 " Editor style
+Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'

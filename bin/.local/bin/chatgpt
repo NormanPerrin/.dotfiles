@@ -24,7 +24,7 @@ if [ "$1" = 'ask' ]; then
   prompt="$2"
 else
   tmpfile=$(mktemp)
-  v "$tmpfile"
+  nvim -i NONE -c 'set ft=markdown' -c 'startinsert' "$tmpfile"
   prompt=$(cat "$tmpfile")
 fi
 
@@ -33,13 +33,12 @@ if [ -z "$prompt" ]; then
   exit 1
 fi
 
-# save the prompt to the chat database
 sqlite3 "$history_db_path" "INSERT INTO chat (prompt) VALUES ('$prompt');"
 
 response=$(openai api chat_completions.create \
   -m gpt-3.5-turbo \
   -t 0.1 \
-  -M 2000 \
+  -M 5000 \
   -g user "$prompt")
 
 echo "$response"

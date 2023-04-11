@@ -3,6 +3,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
+export EDITOR='nvim -i NONE'
+
 export SFEED_PLUMBER='sfeed_open'
 export SFEED_YANKER='sfeed_copy'
 export SFEED_URL_FILE="$HOME/.sfeed/sfeedrc"
@@ -10,16 +12,20 @@ export SFEED_URL_FILE="$HOME/.sfeed/sfeedrc"
 export MPV_PLAYLISTS_DIR="$XDG_DATA_HOME/mpv/playlists"
 
 export BIN="$HOME/.local/bin"
+export TWITTER_BIN="$HOME/.local/twitter-bin"
+export MEDIA_BIN="$HOME/.local/media-bin"
+export CODE_BIN="$HOME/.local/code-bin"
+
 export CODE="$HOME/.local/code"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export GOPATH="$XDG_DATA_HOME/go"
 export LSP_SERVERS="$XDG_DATA_HOME/nvim/mason/bin"
 
-export PATH="/opt/homebrew/bin:$BIN:$CARGO_HOME:$GOPATH/bin:$LSP_SERVERS:$PATH"
+export PATH="/opt/homebrew/bin:$BIN:$TWITTER_BIN:$MEDIA_BIN:$CODE_BIN:$CARGO_HOME:$GOPATH/bin:$LSP_SERVERS:$PATH"
 
 # Export other
 export TEMPLATES="$HOME/.local/templates"
-export MUSIC="$HOME/Music/music"
+export MUSIC="$HOME/Music/"
 export VIDEOS="$HOME/Movies"
 
 # Locale
@@ -28,9 +34,6 @@ export LANG="en_US.UTF-8"
 # Color on less
 export LESS='-R'
 export LESSOPEN='|pygmentize -g %s'
-
-# Habits
-export HABITS_STORE="$CODE/sites/nperrin.io/habits/habits.json"
 
 # Ignore duplicates in history
 export HISTCONTROL='ignoreboth'
@@ -58,12 +61,6 @@ export NODE_REPL_HISTORY="$XDG_CACHE_HOME/node_repl_history"
 
 # Solves "Inappropriate ioctl for device gpg" error... copied and pasted from SO, don't ask me why
 export GPG_TTY=$(tty)
-
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='nvim'
-fi
 
 # Activate auto complete
 autoload -U compinit; compinit

@@ -1,6 +1,9 @@
 local M = {}
 
 M.init = function()
+  -- Set working directory as the current file directory
+  vim.opt.autochdir = true
+
   -- Identing
   vim.opt.tabstop = 2
   vim.opt.shiftwidth = 2
@@ -46,7 +49,10 @@ M.init = function()
   -- Mac OS things
   vim.opt.clipboard = 'unnamedplus'
   vim.opt.backspace = 'indent,eol,start'
-end
 
+  vim.g.copilot_filetypes = {
+    ['markdown'] = true,
+  }
+end
 
 return M

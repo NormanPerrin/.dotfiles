@@ -623,8 +623,6 @@ key_bindings:
   - { key: Key7, mods: Command, chars: "\x02\x37" }
   - { key: Key8, mods: Command, chars: "\x02\x38" }
   - { key: Key9, mods: Command, chars: "\x02\x39" }
-  # Stack Overflow shortcut
-  - { key: R, mods: Command, chars: "\x74\x6d\x75\x78\x2d\x63\x68\x74\x0a" }
   # vi movements
   - { key: H, mods: Command|Shift, chars: "\x02\x1b\x5b\x44" }
   - { key: L, mods: Command|Shift, chars: "\x02\x1b\x5b\x43" }

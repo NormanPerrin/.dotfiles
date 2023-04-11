@@ -5,7 +5,9 @@ wallpapers="$HOME/Documents/wallpapers"
 options="$(fd . "$wallpapers" -x basename)"
 bg_selection="$(echo "$options" |sort |custom_fzf --prompt="Wallpaper: ")"
 
-if [ -z "$bg_selection" ]; then
+echo $bg_selection
+
+if [ -z $bg_selection ]; then
   echo 'No selection'
   exit 1
 fi

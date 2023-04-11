@@ -3,12 +3,11 @@ nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " Write file and execute it
 nnoremap <leader><leader>x :w<CR> :source %<CR>
+" Make current file executable
+nnoremap <space>ex :!chmod +x %<CR>
 
 " Replace word under cursor
 nnoremap <space>r :%s/<C-R><C-W>/<C-R><C-W>/gc<Left><Left><Left>
-
-" Make current file executable
-nnoremap <space>ex :!chmod +x %<CR>
 
 " credits: https://vimtricks.com/p/clear-search-highlight
 nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
@@ -109,3 +108,8 @@ autocmd BufNewFile,BufRead *.diagram vnoremap f :VBox<cr>
 
 " tree
 nnoremap <leader>p :NvimTreeToggle<CR>
+
+" telescope
+nnoremap <C-p> <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
