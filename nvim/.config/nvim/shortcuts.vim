@@ -113,3 +113,4 @@ nnoremap <leader>p :NvimTreeToggle<CR>
 nnoremap <C-p> <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fs <cmd>Telescope lsp_workspace_symbols<cr>

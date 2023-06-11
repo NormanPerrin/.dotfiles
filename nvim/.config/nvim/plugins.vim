@@ -32,9 +32,6 @@ Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
 Plug 'theHamsta/nvim-dap-virtual-text'
 
-" REPL
-Plug 'hkupty/iron.nvim'
-
 " Editor style
 Plug 'MunifTanjim/nui.nvim'
 Plug 'nvim-tree/nvim-tree.lua'

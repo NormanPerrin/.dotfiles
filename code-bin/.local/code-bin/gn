@@ -1,0 +1,84 @@
+#!/bin/sh
+
+repositories=$(ssh git ls | sed 's/\.git//g')
+
+check_repo_exists() {
+  echo "$repositories" | rg "^$1$" >/dev/null 
+}
+create_repo() {
+  name=$(slugify "$1")
+  ssh git "mkdir $name.git" >/dev/null
+  ssh git "cd $name.git && git init --bare" >/dev/null
+  printf 'Repository created\n'
+}
+
+create_repository() {
+  repo_name=$1
+
+  if [ -z "$repo_name" ]; then
+    printf 'Enter the name of the repository: '
+    read -r repo_name
+  fi
+
+  if [ -z "$repo_name" ]; then
+    printf '! Invalid repository name\n'
+    exit 1
+  fi
+  if check_repo_exists "$repo_name"; then
+    printf '! Repository already exists\n'
+    exit 1
+  fi
+
+  create_repo "$repo_name"
+}
+
+remove_repository() {
+  name=$1
+
+  if [ -z "$name" ]; then
+    name=$(echo "$repositories" | fzf-tmux --prompt='Remove repository: ' --reverse)
+  fi
+  if [ -z "$name" ]; then
+    exit 0
+  fi
+
+  ssh git "rm -rf $name.git"
+}
+
+ask_input() {
+  printf "What would you like to do?\n"
+  printf '1. Create a new repository\n'
+  printf '2. List all repositories\n'
+  printf '3. Remove a repository\n'
+  printf '> '
+
+  read -r choice
+
+  if [ "$choice" -lt 1 ] || [ "$choice" -gt 3 ]; then
+    printf 'Invalid choice\n'
+    exit 1
+  fi
+
+  case $choice in
+    1) create_repository ;;
+    2) echo "$repositories" ;;
+    3) remove_repository ;;
+  esac
+}
+
+use_input() {
+  case $1 in
+    create) create_repository "$2" ;;
+    list) echo "$repositories" ;;
+    remove) remove_repository "$2" ;;
+    *) printf 'Invalid argument\n' ;;
+  esac
+}
+
+# --- Main ---
+
+if [ -z "$1" ]; then
+  ask_input
+else
+  use_input "$@"
+fi

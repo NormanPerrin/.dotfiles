@@ -45,3 +45,5 @@ alias gd='git diff'
 alias gl='git log'
 alias gr='git restore'
 alias gst='git status'
+
+eval "$(github-copilot-cli alias -- "$0")"

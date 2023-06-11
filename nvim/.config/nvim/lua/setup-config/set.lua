@@ -17,8 +17,6 @@ M.init = function()
   vim.opt.termguicolors = true
   vim.opt.showtabline = 2
   vim.opt.scrolloff = 4
-  vim.opt.sidescrolloff = 4
-  vim.opt.wrap = false
 
   -- Editing
   vim.opt.list = true

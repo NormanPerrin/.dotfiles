@@ -38,8 +38,6 @@ export LESSOPEN='|pygmentize -g %s'
 # Ignore duplicates in history
 export HISTCONTROL='ignoreboth'
 
-# Highlight man pages with bat
-export MANPAGER="sh -c 'col -bx |bat -l man -p'"
 # Search for manuals here too
 export MANPATH="$(manpath):/usr/local/man"
 

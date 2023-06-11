@@ -25,4 +25,4 @@ sed -i.bak "s/@name@/$ugly_name/g" "$project_dir/package.json" && rm "$project_d
 
 cd "$project_dir" && pnpm install
 
-v "$project_dir"
+nvim -i NONE "$project_dir"

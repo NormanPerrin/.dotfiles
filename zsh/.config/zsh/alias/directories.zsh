@@ -54,5 +54,5 @@ function cdv() {
   fi
 
   cd "$CODE/$response"
-  v .
+  nvim -i NONE .
 }

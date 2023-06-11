@@ -36,6 +36,8 @@ M.init = function()
     },
   }
 
+  dap.configurations.typescript = dap.configurations.javascript
+
   require('dapui').setup({
     layouts = {
       {

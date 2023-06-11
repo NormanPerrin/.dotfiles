@@ -6,11 +6,17 @@ M.init = function()
   lsp.preset("recommended")
 
   -- Fix Undefined global "vim"
-  lsp.configure("sumneko_lua", {
+  lsp.configure("lua_ls", {
     settings = {
       Lua = {
+        runtime = {
+          version = 'LuaJIT',
+        },
         diagnostics = {
-          globals = { "vim" }
+          globals = { "vim" },
+        },
+        workspace = {
+          library = vim.api.nvim_get_runtime_file("", true),
         }
       }
     }

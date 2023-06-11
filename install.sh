@@ -6,20 +6,15 @@ brew tap homebrew/cask-fonts hashicorp/tap
 
 brew install --cask rectangle 1password 1password-cli discord slack whatsapp obs postman font-jetbrains-mono-nerd-font robo-3t wkhtmltopdf docker
 
-brew install node nvim deno rust yarn awscli tmux stow gpg pandoc imagemagick unoconv ffmpeg jq mysql rg fd fzf bat tree youtube-dl shellcheck aspell mpv nq redis hashicorp/tap/terraform neofetch neomutt isync pass lynx urlview notmuch abook qrencode msmtp luarocks hashicorp/tap/terraform-ls ninja lazydocker rust-analyzer
+brew install node nvim deno rust yarn awscli tmux stow gpg pandoc imagemagick unoconv ffmpeg jq mysql rg fd fzf bat tree youtube-dl shellcheck aspell mpv nq redis hashicorp/tap/terraform neofetch neomutt isync pass urlview notmuch abook qrencode msmtp luarocks hashicorp/tap/terraform-ls ninja lazydocker rust-analyzer renameutils
 
 gem install twurl
 
 npm i -g \
   wscat \
   typescript \
-  sql-language-server \
-  bash-language-server \
-  dockerfile-language-server-nodejs \
-  vscode-langservers-extracted \
-  @cucumber/language-server \
-  yaml-language-server \
-  intelephense
+  intelephense \
+  @githubnext/github-copilot-cli
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
@@ -34,24 +29,10 @@ git clone https://github.com/alacritty/alacritty \
     && cp -r alacritty/target/release/osx/Alacritty.app /Applications/ \
     && rm -fr alacritty
 
-git clone git://git.codemadness.org/sfeed \
-    && make -C sfeed \
-    && sudo make -C sfeed install
-
-curl -s https://kristaps.bsd.lv/lowdown/snapshots/lowdown.tar.gz > lowdown.tar.gz \
-    && tar -zxvf lowdown.tar.gz \
-    && rm lowdown.tar.gz \
-    && pushd lowdown*
-    && ./configure \
-    && make \
-    && make install
-    && make regress \
-    && sudo make install
-    && popd \
-    && rm -fr lowdown*
-
 # Fonts
-mkdir -p $XDG_DATA_HOME/fonts
-  && git clone git@github.com/xero/figlet-fonts.git $XDG_DATA_HOME/fonts/figlet-fonts
+mkdir -p "$XDG_DATA_HOME/fonts" \
+  && git clone git@github.com/xero/figlet-fonts.git "$XDG_DATA_HOME/fonts/figlet-fonts"
 
+# TODO
+# lowdown
 # pip3 install termdown
