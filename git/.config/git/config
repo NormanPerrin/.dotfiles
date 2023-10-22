@@ -1,7 +1,7 @@
 [user]
     name = Norman Perrin
-    email = norman.perrin.94@gmail.com
-    signingKey = EDE35A04B36DAFC471C64AE1303DFEF9E29C1A10
+    email = hey@nperrin.io
+    signingKey = 3A7786B308C58A482D12A36BF802E03CF68C9333
 [core]
     editor = nvim
     excludesfile = ~/.gitignore
@@ -10,6 +10,10 @@
     insteadOf = "gh:"
 [url "git@github.com:"]
     pushInsteadOf = "gh:"
+[url "https://gitlab.com/"]
+    insteadOf = "gl:"
+[url "git@gitlab.com:"]
+    pushInsteadOf = "gl:"
 [init]
     defaultBranch = main
 [gpg]

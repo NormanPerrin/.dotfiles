@@ -4,10 +4,8 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_HOME="$HOME/.local/share"
 
 export EDITOR='nvim -i NONE'
-
-export SFEED_PLUMBER='sfeed_open'
-export SFEED_YANKER='sfeed_copy'
-export SFEED_URL_FILE="$HOME/.sfeed/sfeedrc"
+export CODE="$HOME/.local/code"
+export WORK="$HOME/.local/work"
 
 export MPV_PLAYLISTS_DIR="$XDG_DATA_HOME/mpv/playlists"
 
@@ -16,12 +14,16 @@ export TWITTER_BIN="$HOME/.local/twitter-bin"
 export MEDIA_BIN="$HOME/.local/media-bin"
 export CODE_BIN="$HOME/.local/code-bin"
 
-export CODE="$HOME/.local/code"
-export CARGO_HOME="$XDG_DATA_HOME/cargo"
+export LOCAL_BIN='/opt/local/bin'
+export LOCAL_SBIN='/opt/local/bin'
+export BREW_BIN='/opt/homebrew/bin'
+export FZF_BIN='/opt/homebrew/opt/fzf/bin'
+
 export GOPATH="$XDG_DATA_HOME/go"
+export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export LSP_SERVERS="$XDG_DATA_HOME/nvim/mason/bin"
 
-export PATH="/opt/homebrew/bin:$BIN:$TWITTER_BIN:$MEDIA_BIN:$CODE_BIN:$CARGO_HOME:$GOPATH/bin:$LSP_SERVERS:$PATH"
+export PATH="$BIN:$TWITTER_BIN:$MEDIA_BIN:$CODE_BIN:$LOCAL_BIN:$LOCAL_SBIN:$BREW_BIN:$FZF_BIN:$CARGO_HOME:$GOPATH/bin:$LSP_SERVERS:$PATH"
 
 # Export other
 export TEMPLATES="$HOME/.local/templates"
@@ -33,7 +35,6 @@ export LANG="en_US.UTF-8"
 
 # Color on less
 export LESS='-R'
-export LESSOPEN='|pygmentize -g %s'
 
 # Ignore duplicates in history
 export HISTCONTROL='ignoreboth'
@@ -60,6 +61,8 @@ export NODE_REPL_HISTORY="$XDG_CACHE_HOME/node_repl_history"
 # Solves "Inappropriate ioctl for device gpg" error... copied and pasted from SO, don't ask me why
 export GPG_TTY=$(tty)
 
+export TERM=screen-256color
+
 # Activate auto complete
 autoload -U compinit; compinit
 # complete -o nospace -C /usr/local/bin/terraform terraform
@@ -84,3 +87,13 @@ source "$XDG_CONFIG_HOME/zsh/alias/git.zsh"
 source "$XDG_CONFIG_HOME/zsh/alias/vi.zsh"
 # Bindings
 source "$XDG_CONFIG_HOME/zsh/bindings.zsh"
+
+private_zsh="$HOME/.config/private.zsh"
+[ -f $private_zsh ] && source $private_zsh
+
+# OrbStack: command-line tools and integration
+source "$HOME/.orbstack/shell/init.zsh" 2>/dev/null || :
+
+# fzf auto-completion setup
+source "/opt/homebrew/opt/fzf/shell/completion.zsh" 2> /dev/null
+source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"

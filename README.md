@@ -1,27 +1,29 @@
 # .dotfiles
 
-These are my dotfiles, maybe you don't use my setup but you find something of interest here
+These are my dotfiles, maybe you don't use my setup but you find something of interest here.
 
 What I do for setup my mac:
 
-## Específico para Mac
+## Mac specific
 
-Cambiar configuración teclado:
+For the keyboard:
 
 ```
-Preferencias del sistema --> Teclado
-    --> Cambiar opción "Espera hasta la repetición" a corta.
-    --> Teclas de modificación. Cambiar tecla "tab" por la de control.
+System preferences --> Keyboard
+    --> Change the "wait for repetition" for the shortest value.
+    --> In keys change tab by control.
 ```
 
-## Programas
+## install.sh
 
-Run the install script
+This script installs the programs I use and my config.
 
-If I make some other config I'll add it here.
+## Private things
 
-PENDING: add rsync for my external hard drive
+If there is something private I need to add from an zsh script the `~/.config/private.zsh` is sourced if exists.
+
+You can apply this same system for private configurations like env vars, ssh keys, etc.
 
 ---
 
-For any problems or errors that might happend, please, create an issue. Thanks!
+For any problems or errors that might happen, please, create an issue. Thanks!

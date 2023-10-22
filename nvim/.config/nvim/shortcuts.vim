@@ -114,3 +114,7 @@ nnoremap <C-p> <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fs <cmd>Telescope lsp_workspace_symbols<cr>
+
+" spell
+autocmd BufRead neomutt-*,*.md :setlocal spell spelllang=en_us
+autocmd BufRead neomutt-*,*.md nnoremap <C-m> :setlocal spell spelllang=

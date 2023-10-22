@@ -38,3 +38,4 @@ Thumbs.db
 # Editor files #
 ################
 .vscode
+.idea

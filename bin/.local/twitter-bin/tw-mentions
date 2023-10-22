@@ -3,7 +3,7 @@
 tweet_url='https://twitter.com/x/status/'
 
 # list my mentions
-mentions=$(twurl "/1.1/statuses/mentions_timeline.json" \
+mentions=$(twurl '/1.1/statuses/mentions_timeline.json' \
   --consumer-key "$(pass tw/api-key)" \
   --consumer-secret "$(pass tw/api-key-secret)" \
   --access-token "$(pass tw/access-token)" \

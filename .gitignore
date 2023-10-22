@@ -1,2 +1,9 @@
 bundle
 .bak
+
+bin/.local/bin/docker
+bin/.local/bin/docker-compose
+bin/.local/bin/docker-credential-osxkeychain
+bin/.local/bin/kubectl
+bin/.local/bin/orb
+bin/.local/bin/orbctl

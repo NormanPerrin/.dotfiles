@@ -1,0 +1,5 @@
+#!/bin/sh
+
+URL='https://www.dolarsi.com/api/api.php?type=valoresprincipales'
+
+curl -s "$URL"  | jq -r '.[] | select( .casa.nombre == "Dolar Blue") | .casa.venta'

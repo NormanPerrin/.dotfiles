@@ -8,10 +8,14 @@ if [ -z "$message" ]; then
   message=$(cat "$tmpfile")
 fi
 
-twurl /2/tweets \
+id=$(twurl /2/tweets \
   --data "$(jo text="$message")" \
   --header 'Content-Type: application/json' \
   --consumer-key "$(pass tw/api-key)" \
   --consumer-secret "$(pass tw/api-key-secret)" \
   --access-token "$(pass tw/access-token)" \
-  --token-secret "$(pass tw/access-token-secret)"
+  --token-secret "$(pass tw/access-token-secret)" \
+  | jq -r '.data.id')
+
+data=$(printf '%s\n%s\n%s' "$message" "https://twitter.com/normanperrinok/status/$id" "$id" | base64)
+curl -d '' https://api.nperrin.io/tweet

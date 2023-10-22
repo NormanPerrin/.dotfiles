@@ -3,7 +3,6 @@ local M = {}
 M.init = function()
   require('gitsigns').setup()
   require('telescope').setup()
-  require('setup-config.chatgpt').init()
   require('setup-config.tree-sitter').init()
   require('setup-config.lsp-zero').init()
   require('setup-config.dap').init()

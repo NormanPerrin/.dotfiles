@@ -1,0 +1,8 @@
+#!/bin/sh
+
+twurl "/1.1/users/show.json?screen_name=$1" \
+  --consumer-key "$(pass tw/api-key)" \
+  --consumer-secret "$(pass tw/api-key-secret)" \
+  --access-token "$(pass tw/access-token)" \
+  --token-secret "$(pass tw/access-token-secret)" \
+  | jq '. | {id, name, screen_name, followers_count, created_at, url}'

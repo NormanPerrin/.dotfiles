@@ -1,0 +1,26 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then
+  echo "Usage: tw-tweets <screen_name>"
+  exit 1
+fi
+
+if [ "$1" = 'me' ]; then
+  user_id=3076380958
+  query_string="user_id=$user_id"
+else
+  query_string="screen_name=$1"
+fi
+
+tweets_path=/tmp/tw-tweets.md
+rm -fr $tweets_path
+
+twurl "/1.1/statuses/user_timeline.json?$query_string" \
+  --consumer-key "$(pass tw/api-key)" \
+  --consumer-secret "$(pass tw/api-key-secret)" \
+  --access-token "$(pass tw/access-token)" \
+  --token-secret "$(pass tw/access-token-secret)" \
+  | jq -r '.[] | [.text, , .created_at]' \
+  | sed -E 's/^\[//; s/^\]//; s/"//g; s/  //; s/^(.*),/# \1/; s/+0000//' >> $tweets_path
+
+nvim -i NONE $tweets_path && rm -fr $tweets_path

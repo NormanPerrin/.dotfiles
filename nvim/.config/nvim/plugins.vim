@@ -21,7 +21,6 @@ Plug 'hrsh7th/cmp-path'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-nvim-lua'
-Plug 'jackMort/ChatGPT.nvim'
 
 " Snippets
 Plug 'L3MON4D3/LuaSnip'
@@ -47,7 +46,6 @@ Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
 
 " Edition
-Plug 'https://github.com/github/copilot.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-speeddating'
