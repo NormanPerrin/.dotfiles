@@ -42,14 +42,19 @@ remove_repository() {
     exit 0
   fi
 
-  ssh git "rm -rf $name.git"
+  •
+
+  printf "Delete %s? [y/n]" "$name"
+  read -r confirm
+
+  [ "$confirm" = 'y' ] && ssh git "rm -rf $name.git"
 }
 
 ask_input() {
   printf "What would you like to do?\n"
-  printf '1. Create a new repository\n'
-  printf '2. List all repositories\n'
-  printf '3. Remove a repository\n'
+  printf '1. Create a new repository --> (gn create)\n'
+  printf '2. List all repositories --> (gn list)\n'
+  printf '3. Remove a repository --> (gn remove)\n'
   printf '> '
 
   read -r choice
