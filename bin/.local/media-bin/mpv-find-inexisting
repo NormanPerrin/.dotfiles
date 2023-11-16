@@ -1,0 +1,9 @@
+#!/bin/sh
+
+for playlist in "$MPV_PLAYLISTS_DIR"/*; do
+  while read -r song; do
+    if [ ! -f "$song" ]; then
+      echo "$song"
+    fi
+  done < "$playlist"
+done

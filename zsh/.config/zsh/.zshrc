@@ -14,14 +14,14 @@ export TWITTER_BIN="$HOME/.local/twitter-bin"
 export MEDIA_BIN="$HOME/.local/media-bin"
 export CODE_BIN="$HOME/.local/code-bin"
 
-export LOCAL_BIN='/opt/local/bin'
-export LOCAL_SBIN='/opt/local/bin'
-export BREW_BIN='/opt/homebrew/bin'
-export FZF_BIN='/opt/homebrew/opt/fzf/bin'
-
 export GOPATH="$XDG_DATA_HOME/go"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export LSP_SERVERS="$XDG_DATA_HOME/nvim/mason/bin"
+
+local LOCAL_BIN='/opt/local/bin'
+local LOCAL_SBIN='/opt/local/bin'
+local BREW_BIN='/opt/homebrew/bin'
+local FZF_BIN='/opt/homebrew/opt/fzf/bin'
 
 export PATH="$BIN:$TWITTER_BIN:$MEDIA_BIN:$CODE_BIN:$LOCAL_BIN:$LOCAL_SBIN:$BREW_BIN:$FZF_BIN:$CARGO_HOME:$GOPATH/bin:$LSP_SERVERS:$PATH"
 
@@ -33,8 +33,8 @@ export VIDEOS="$HOME/Movies"
 # Locale
 export LANG="en_US.UTF-8"
 
-# Color on less
-export LESS='-R'
+# Color on for pager
+export PAGER=most
 
 # Ignore duplicates in history
 export HISTCONTROL='ignoreboth'
@@ -59,7 +59,7 @@ export LESSHISTFILE="$XDG_CACHE_HOME/less_history"
 export NODE_REPL_HISTORY="$XDG_CACHE_HOME/node_repl_history"
 
 # Solves "Inappropriate ioctl for device gpg" error... copied and pasted from SO, don't ask me why
-export GPG_TTY=$(tty)
+export GPG_TTY=$TTY
 
 export TERM=screen-256color
 
@@ -71,15 +71,12 @@ autoload -U compinit; compinit
 KEYTIMEOUT=5
 
 # Functions
-source "$XDG_CONFIG_HOME/zsh/functions/colors.zsh"
-source "$XDG_CONFIG_HOME/zsh/functions/completition.zsh"
-source "$XDG_CONFIG_HOME/zsh/functions/git.zsh"
-source "$XDG_CONFIG_HOME/zsh/functions/history-substring-search.zsh"
-source "$XDG_CONFIG_HOME/zsh/functions/history.zsh"
-source "$XDG_CONFIG_HOME/zsh/functions/server.zsh"
-source "$XDG_CONFIG_HOME/zsh/functions/other.zsh"
+source "$XDG_CONFIG_HOME/zsh/modules/history-substring-search.zsh"
+source "$XDG_CONFIG_HOME/zsh/modules/history.zsh"
+source "$XDG_CONFIG_HOME/zsh/modules/server.zsh"
+source "$XDG_CONFIG_HOME/zsh/modules/other.zsh"
 # Themes
-source "$XDG_CONFIG_HOME/zsh/themes/robbyrussell.zsh"
+source '/opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme'
 # Alias
 source "$XDG_CONFIG_HOME/zsh/alias/directories.zsh"
 source "$XDG_CONFIG_HOME/zsh/alias/others.zsh"
@@ -88,8 +85,7 @@ source "$XDG_CONFIG_HOME/zsh/alias/vi.zsh"
 # Bindings
 source "$XDG_CONFIG_HOME/zsh/bindings.zsh"
 
-private_zsh="$HOME/.config/private.zsh"
-[ -f $private_zsh ] && source $private_zsh
+source "$HOME/.config/private.zsh" 2>/dev/null
 
 # OrbStack: command-line tools and integration
 source "$HOME/.orbstack/shell/init.zsh" 2>/dev/null || :
@@ -97,3 +93,6 @@ source "$HOME/.orbstack/shell/init.zsh" 2>/dev/null || :
 # fzf auto-completion setup
 source "/opt/homebrew/opt/fzf/shell/completion.zsh" 2> /dev/null
 source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+
+# setup direnv
+eval "$(direnv hook zsh)"

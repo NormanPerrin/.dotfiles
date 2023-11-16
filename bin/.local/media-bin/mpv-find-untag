@@ -1,0 +1,9 @@
+#!/bin/sh
+
+fd -t f -d 1 . "$MUSIC" | while read -r f; do
+  found=$(rg "$f" "$MPV_PLAYLISTS_DIR" 2>/dev/null)
+
+  [ -n "$found" ] && continue;
+
+  echo "$f"
+done

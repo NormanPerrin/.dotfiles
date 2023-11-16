@@ -6,9 +6,11 @@ brew tap homebrew/cask-fonts hashicorp/tap
 
 brew install --cask rectangle 1password slack obs postman font-jetbrains-mono-nerd-font robo-3t wkhtmltopdf orbstack
 
-brew install node nvim yarn awscli tmux stow gpg pandoc imagemagick unoconv ffmpeg jq mysql rg fd fzf bat tree youtube-dl shellcheck aspell mpv nq redis hashicorp/tap/terraform neofetch neomutt isync pass urlview notmuch abook qrencode msmtp luarocks hashicorp/tap/terraform-ls ninja renameutils
+brew install node nvim yarn awscli tmux stow gpg pandoc imagemagick unoconv ffmpeg jq mysql rg fd fzf bat tree youtube-dl shellcheck aspell mpv nq redis hashicorp/tap/terraform neofetch neomutt isync pass urlview notmuch abook qrencode msmtp luarocks hashicorp/tap/terraform-ls ninja renameutils adb most silicon powerlevel10k antibody yt-dlp noahgorstein/tap/jqp exa nixos direnv
 
 gem install twurl
+
+go install github.com/oklog/ulid/v2/cmd/ulid@latest
 
 npm i -g \
   wscat \
@@ -28,6 +30,8 @@ git clone https://github.com/alacritty/alacritty \
     && make -C alacritty app \
     && cp -r alacritty/target/release/osx/Alacritty.app /Applications/ \
     && rm -fr alacritty
+
+git clone https://github.com/tmux-plugins/tmux-yank ~/.local/share/tmux-yank
 
 # Fonts
 mkdir -p "$XDG_DATA_HOME/fonts" \

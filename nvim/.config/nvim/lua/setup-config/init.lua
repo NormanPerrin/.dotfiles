@@ -7,9 +7,9 @@ M.init = function()
   require('setup-config.lsp-zero').init()
   require('setup-config.dap').init()
   require('setup-config.lualine').init()
-  require('setup-config.nvim-tree').init()
   require('setup-config.tokyonight').init()
   require('setup-config.set').init()
+  require('setup-config.oil').init()
 end
 
 return M

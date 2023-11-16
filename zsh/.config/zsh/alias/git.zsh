@@ -36,6 +36,13 @@ function ga() {
   git status
 }
 
+function grm() {
+  git checkout main
+  git pull origin main
+  git checkout -
+  git rebase main
+}
+
 alias gb='git branch'
 alias gc='git commit'
 alias gca='git commit --amend'
@@ -45,5 +52,3 @@ alias gd='git diff'
 alias gl='git log'
 alias gr='git restore'
 alias gst='git status'
-
-eval "$(github-copilot-cli alias -- "$0")"

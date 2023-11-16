@@ -22,16 +22,11 @@ alias 9='cd -9'
 alias md='mkdir -pv'
 alias rd=rmdir
 
-# List directory contents
-alias l='ls -lah'
-alias ll='ls -lh'
-alias la='ls -lAh'
-
 # Shortcuts
 alias cdb="cd $BIN"
 
-function cdc() {
-  cd "$CODE"
+function choose_dir_from() {
+  cd "$1"
 
   response="$(fd -t d -E '*node_modules*' -d 1 . |fzf --preview='tree -L 2 -I 'node_modules' {}' --bind='space:toggle-preview' --prompt="Project: ")"
 
@@ -40,19 +35,13 @@ function cdc() {
     return
   fi
 
-  cd "$CODE/$response"
+  cd "$1/$response"
 }
 
-function cdv() {
-  cd "$CODE"
+function cdc() {
+  choose_dir_from $CODE
+}
 
-  response="$(fd -t d -E '*node_modules*' -d 1 . |fzf --preview='tree -L 2 -I 'node_modules' {}' --bind='space:toggle-preview' --prompt="Project: ")"
-
-  if [ -z "$response" ]; then
-    cd - > /dev/null
-    return
-  fi
-
-  cd "$CODE/$response"
-  nvim -i NONE .
+function cdw() {
+  choose_dir_from $WORK
 }

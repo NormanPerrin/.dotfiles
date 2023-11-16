@@ -5,6 +5,7 @@
 [core]
     editor = nvim
     excludesfile = ~/.gitignore
+
 # Clone git repos with URLs like "gh:normanperrin/.dotfiles"
 [url "https://github.com/"]
     insteadOf = "gh:"
@@ -14,14 +15,18 @@
     insteadOf = "gl:"
 [url "git@gitlab.com:"]
     pushInsteadOf = "gl:"
+
 [init]
     defaultBranch = main
 [gpg]
     program = gpg
-# Enforce SSH
 [url "ssh://git@github.com/"]
-  insteadOf = https://github.com/
+    insteadOf = https://github.com/
 [url "ssh://git@gitlab.com/"]
-  insteadOf = https://gitlab.com/
+    insteadOf = https://gitlab.com/
 [url "ssh://git@bitbucket.org/"]
-  insteadOf = https://bitbucket.org/
+    insteadOf = https://bitbucket.org/
+
+# Change for work related projects
+[includeIf "gitdir:~/.local/work/"]
+    path = config.work

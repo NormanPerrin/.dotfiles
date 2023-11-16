@@ -3,14 +3,22 @@ nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " Write file and execute it
 nnoremap <leader><leader>x :w<CR> :source %<CR>
-" Make current file executable
-nnoremap <space>ex :!chmod +x %<CR>
 
 " Replace word under cursor
 nnoremap <space>r :%s/<C-R><C-W>/<C-R><C-W>/gc<Left><Left><Left>
 
 " credits: https://vimtricks.com/p/clear-search-highlight
 nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L>
+
+" quickfix
+nnoremap [q <cmd>cn<cr>
+nnoremap ]q <cmd>cp<cr>
+" add empty lines
+nnoremap [<space> O<Esc>j
+nnoremap ]<space> o<Esc>k
+" git
+nnoremap [c <cmd>Gitsigns next_hunk<cr>
+nnoremap ]c <cmd>Gitsigns prev_hunk<cr>
 
 " Navigate tabs
 " gt --> tab next
@@ -38,6 +46,34 @@ inoremap ? ?<c-g>u
 nnoremap <leader>v :setlocal ve=all<cr>
 nnoremap <leader>!v :setlocal ve=<cr>
 
+" goyo
+nnoremap <leader>z :Goyo<CR>
+
+" .diagram files
+autocmd BufNewFile,BufRead *.diagram :setlocal ve=all
+autocmd BufNewFile,BufRead *.diagram nnoremap J <C-v>j:VBox<cr>
+autocmd BufNewFile,BufRead *.diagram nnoremap K <C-v>k:VBox<cr>
+autocmd BufNewFile,BufRead *.diagram nnoremap H <C-v>h:VBox<cr>
+autocmd BufNewFile,BufRead *.diagram nnoremap L <C-v>l:VBox<cr>
+autocmd BufNewFile,BufRead *.diagram vnoremap f :VBox<cr>
+
+" navigation
+nnoremap <leader>p <cmd>Oil<cr>
+
+" telescope
+nnoremap <C-p> <cmd>Telescope find_files hidden=true<cr>
+nnoremap <leader>ff <cmd>Telescope find_files cwd=%:h<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fs <cmd>Telescope git_status<cr>
+
+" spell
+autocmd BufRead neomutt-*,*.md :setlocal spell spelllang=en_us
+autocmd BufRead neomutt-*,*.md nnoremap <C-m> :setlocal spell spelllang=
+
+" C++
+autocmd BufRead *.cpp nnoremap <leader><leader>b <cmd>AsyncRun cd build && cmake --build . <cr>
+autocmd BufRead *.cpp nnoremap <leader><leader>r <cmd>vs output<cr><cmd>r ! cd build && fd -d 1 -t x \| while read b; do ./$b; done <cr>
 
 " | System shortcuts I might forget                                                             |
 " | ------------------------------------------------------------------------------------------- |
@@ -94,27 +130,3 @@ nnoremap <leader>!v :setlocal ve=<cr>
 " | :set noic                            | No ignore case in searchs.                           |
 " | :set ic                              | Ignore case in searchs.                              |
 " | :ser invic                           | Toggle ic option.                                    |
-
-" goyo
-nnoremap <leader>z :Goyo<CR>
-
-" .diagram files
-autocmd BufNewFile,BufRead *.diagram :setlocal ve=all
-autocmd BufNewFile,BufRead *.diagram nnoremap J <C-v>j:VBox<cr>
-autocmd BufNewFile,BufRead *.diagram nnoremap K <C-v>k:VBox<cr>
-autocmd BufNewFile,BufRead *.diagram nnoremap H <C-v>h:VBox<cr>
-autocmd BufNewFile,BufRead *.diagram nnoremap L <C-v>l:VBox<cr>
-autocmd BufNewFile,BufRead *.diagram vnoremap f :VBox<cr>
-
-" tree
-nnoremap <leader>p :NvimTreeToggle<CR>
-
-" telescope
-nnoremap <C-p> <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fs <cmd>Telescope lsp_workspace_symbols<cr>
-
-" spell
-autocmd BufRead neomutt-*,*.md :setlocal spell spelllang=en_us
-autocmd BufRead neomutt-*,*.md nnoremap <C-m> :setlocal spell spelllang=

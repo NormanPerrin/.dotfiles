@@ -12,7 +12,7 @@ Plug 'williamboman/mason-lspconfig.nvim'
 " Telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
 
 " Completion
 Plug 'hrsh7th/nvim-cmp'
@@ -31,15 +31,14 @@ Plug 'mfussenegger/nvim-dap'
 Plug 'rcarriga/nvim-dap-ui'
 Plug 'theHamsta/nvim-dap-virtual-text'
 
-" Editor style
+" Styles
 Plug 'MunifTanjim/nui.nvim'
-Plug 'nvim-tree/nvim-tree.lua'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
-Plug 'lewis6991/gitsigns.nvim'
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
-Plug 'preservim/nerdcommenter'
+" Navigation
+Plug 'stevearc/oil.nvim'
 
 " Presentation
 Plug 'junegunn/limelight.vim'
@@ -50,11 +49,15 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'tpope/vim-speeddating'
 
-" Diagrams
-Plug 'jbyuki/venn.nvim'
+" Execute async shell commands and out to the quickfix
+Plug 'skywind3000/asyncrun.vim'
 
-" Markdown
+" Other
+Plug 'lewis6991/gitsigns.nvim'
+Plug 'preservim/nerdcommenter'
 Plug 'preservim/vim-markdown'
+Plug 'jbyuki/venn.nvim'
+Plug 'diepm/vim-rest-console'
 
 call plug#end()
 

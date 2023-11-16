@@ -1,0 +1,16 @@
+#!/bin/sh
+
+lang=$(defaults read ~/Library/Preferences/com.apple.HIToolbox.plist \
+  | rg Current | sed -E 's/.*"(.*)".*/\1/')
+
+if [ "$lang" = 'com.apple.keylayout.US' ]; then
+  printf "US"
+  exit
+fi
+
+if [ "$lang" = 'com.apple.keylayout.Spanish-ISO' ]; then
+  printf "ES"
+  exit
+fi
+
+printf '?'

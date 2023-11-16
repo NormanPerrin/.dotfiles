@@ -1,9 +1,29 @@
+env:
+  TERM: alacritty
+
+selection:
+  save_to_clipboard: true
+  text: CellBackground
+
 window:
-  startup_mode: Maximized
-  title: Alacritty
+  opacity: 1.0
+  dimensions:
+    columns: 110
+    lines: 37
+  padding:
+    x: 4
+    y: 2
+  decorations: none
+  startup_mode: Windowed
+  dynamic_title: true
+
+  # startup_mode: Maximized
+  # decorations: none
+  # dynamic_title: true
+
 
 font:
-  size: 18.0
+  size: 16.0
   normal:
     family: 'JetBrainsMono Nerd Font Mono'
     style: Regular
@@ -20,10 +40,7 @@ font:
 
 draw_bold_text_with_bright_colors: true
 
-background_opacity: 0.9
-
-mouse:
-  hide_when_typing: true
+background_opacity: 0.95
 
 # Custom shortcuts...
 # Thanks! https://www.joshmedeski.com/posts/macos-keyboard-shortcuts-for-tmux
@@ -62,32 +79,40 @@ key_bindings:
   - { key: J, mods: Command|Shift, chars: "\x02\e[B" }
   - { key: K, mods: Command|Shift, chars: "\x02\e[A" }
 
+# TokyoNight Alacritty Colors
 colors:
-  # Default colors
-  primary:
-    background: '#2E3440'
-    foreground: '#D8DEE9'
 
   # Normal colors
   normal:
-    black: '#3B4252'
-    red: '#BF616A'
-    green: '#A3BE8C'
-    yellow: '#EBCB8B'
-    blue: '#81A1C1'
-    magenta: '#B48EAD'
-    cyan: '#88C0D0'
-    white: '#E5E9F0'
+    black: "0x1D202F"
+    red: "0xf7768e"
+    green: "0x9ece6a"
+    yellow: "0xe0af68"
+    blue: "0x7aa2f7"
+    magenta: "0xbb9af7"
+    cyan: "0x7dcfff"
+    white: "0xa9b1d6"
 
   # Bright colors
   bright:
-    black: '#4C566A'
-    red: '#BF616A'
-    green: '#A3BE8C'
-    yellow: '#EBCB8B'
-    blue: '#81A1C1'
-    magenta: '#B48EAD'
-    cyan: '#8FBCBB'
-    white: '#ECEFF4'
+    black: "0x414868"
+    red: "0xf7768e"
+    green: "0x9ece6a"
+    yellow: "0xe0af68"
+    blue: "0x7aa2f7"
+    magenta: "0xbb9af7"
+    cyan: "0x7dcfff"
+    white: "0xc0caf5"
 
-theme: Nord
+  indexed_colors:
+    - { index: 16, color: "0xff9e64" }
+    - { index: 17, color: "0xdb4b4b" }
+
+mouse:
+  hide_when_typing: true
+
+cursor:
+  style:
+    shape: Block
+  vi_mode_style:
+    shape: Beam

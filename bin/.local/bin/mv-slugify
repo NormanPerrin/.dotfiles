@@ -1,0 +1,36 @@
+#!/bin/sh
+
+file_path="$1"
+apply_ext="$2"
+
+file_dir="$(dirname "$file_path")"
+filename="$(basename "$file_path")"
+
+usage() {
+  echo 'Usage:'
+  echo "$0 ./SomeFile [x]"
+  echo '	x: indicates if include the extension (optional)'
+}
+
+if [ ! -f "$1" ]; then
+  echo 'file does not exists'
+  exit 1
+fi
+if [ -n "$2" ] && [ "$2" != 'x' ]; then
+  echo 'incorrect value for second parameter'
+  echo ''
+  usage
+  exit 1
+fi
+
+if [ "$apply_ext" = 'x' ]; then
+  ext="$(echo "$filename" | sed -E 's/.*(\..*)$/\1/')" 
+
+  echo "$filename" | sed -E 's/(.*)(\..*)$/\1/' \
+    | while read -r new_filename; do mv "$file_path" "$file_dir/$(slugify "$new_filename")$ext"; done
+
+  exit 0
+fi
+
+echo "$filename" | sed -E 's/(.*)$/\1/' \
+  | while read -r new_filename; do mv "$file_path" "$file_dir/$(slugify "$new_filename")"; done
