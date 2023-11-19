@@ -67,23 +67,20 @@ export TERM=screen-256color
 autoload -U compinit; compinit
 # complete -o nospace -C /usr/local/bin/terraform terraform
 
-# Remove mode switching delay.
-KEYTIMEOUT=5
-
-# Functions
+# Modules
 source "$XDG_CONFIG_HOME/zsh/modules/history-substring-search.zsh"
 source "$XDG_CONFIG_HOME/zsh/modules/history.zsh"
-source "$XDG_CONFIG_HOME/zsh/modules/server.zsh"
+source "$XDG_CONFIG_HOME/zsh/modules/mac-utils.zsh"
 source "$XDG_CONFIG_HOME/zsh/modules/other.zsh"
-# Themes
+source "$XDG_CONFIG_HOME/zsh/modules/server.zsh"
+source "$XDG_CONFIG_HOME/zsh/modules/bindings.zsh"
+# Theme
 source '/opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme'
 # Alias
 source "$XDG_CONFIG_HOME/zsh/alias/directories.zsh"
 source "$XDG_CONFIG_HOME/zsh/alias/others.zsh"
 source "$XDG_CONFIG_HOME/zsh/alias/git.zsh"
 source "$XDG_CONFIG_HOME/zsh/alias/vi.zsh"
-# Bindings
-source "$XDG_CONFIG_HOME/zsh/bindings.zsh"
 
 source "$HOME/.config/private.zsh" 2>/dev/null
 
