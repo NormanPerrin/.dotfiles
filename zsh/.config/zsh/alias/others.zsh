@@ -10,3 +10,5 @@ alias curl=xh
 alias cat='bat -p --theme=Nord'
 alias l='exa --oneline --icons'
 alias bat='bat -p'
+
+alias laws='aws --endpoint-url http://127.0.0.1:4566/000000000000'

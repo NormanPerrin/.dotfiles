@@ -20,8 +20,9 @@ export LSP_SERVERS="$XDG_DATA_HOME/nvim/mason/bin"
 
 local LOCAL_BIN='/opt/local/bin'
 local LOCAL_SBIN='/opt/local/bin'
-local BREW_BIN='/opt/homebrew/bin'
-local FZF_BIN='/opt/homebrew/opt/fzf/bin'
+local BREW_HOME="$(brew config |rg HOMEBREW_PREFIX |cut -d' ' -f2)"
+local BREW_BIN="$BREW_HOME/bin"
+local FZF_BIN="$BREW_HOME/opt/fzf/bin"
 
 export PATH="$BIN:$TWITTER_BIN:$MEDIA_BIN:$CODE_BIN:$LOCAL_BIN:$LOCAL_SBIN:$BREW_BIN:$FZF_BIN:$CARGO_HOME:$GOPATH/bin:$LSP_SERVERS:$PATH"
 
@@ -75,7 +76,7 @@ source "$XDG_CONFIG_HOME/zsh/modules/other.zsh"
 source "$XDG_CONFIG_HOME/zsh/modules/server.zsh"
 source "$XDG_CONFIG_HOME/zsh/modules/bindings.zsh"
 # Theme
-source '/opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme'
+source "$BREW_HOME/share/powerlevel10k/powerlevel10k.zsh-theme"
 # Alias
 source "$XDG_CONFIG_HOME/zsh/alias/directories.zsh"
 source "$XDG_CONFIG_HOME/zsh/alias/others.zsh"
@@ -88,8 +89,8 @@ source "$HOME/.config/private.zsh" 2>/dev/null
 source "$HOME/.orbstack/shell/init.zsh" 2>/dev/null || :
 
 # fzf auto-completion setup
-source "/opt/homebrew/opt/fzf/shell/completion.zsh" 2> /dev/null
-source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+source "$BREW_HOME/opt/fzf/shell/completion.zsh" 2> /dev/null
+source "$BREW_HOME/opt/fzf/shell/key-bindings.zsh"
 
 # setup direnv
 eval "$(direnv hook zsh)"
