@@ -1,17 +1,19 @@
 #!/bin/sh
 
-wallpapers="$HOME/Documents/wallpapers"
+wallpapers="$BACKGROUNDS"
+term_config_src="$CODE/dotfiles/wezterm/.config/wezterm/wezterm.lua"
 
 options="$(fd . "$wallpapers" -x basename)"
 bg_selection="$(echo "$options" |sort |custom_fzf --prompt="Wallpaper: ")"
 
-echo $bg_selection
-
-if [ -z $bg_selection ]; then
+if [ -z "$bg_selection" ]; then
   echo 'No selection'
   exit 1
 fi
 
 bg_path="$wallpapers/$bg_selection"
 
-osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$bg_path\""
+sed -i.bak "s@window_background_image = .*@window_background_image = '$bg_path'@" $term_config_src # \
+    # && rm $XDG_CONFIG_HOME/wezterm.lua.bak
+
+# osascript -e "tell application \"Finder\" to set desktop picture to POSIX file \"$bg_path\""

@@ -1,17 +1,25 @@
-return {
-  'folke/tokyonight.nvim',
-  lazy = false, -- We want the colorscheme to load immediately when starting Neovim
-  priority = 1000, -- Load the colorscheme before other non-lazy-loaded plugins
+local tokyonight_theme = {
+  plugin_name = 'folke/tokyonight.nvim',
+  module_name = 'tokyonight',
   opts = {
-    style = "storm",
-    transparent = true,
+    style = "moon", -- storm, night, moon, day
+    transparent = false,
     sidebars = { "qf", "help", "vista_kind" },
     dim_inactive = true,
   },
-  config = function (_, opts)
-    require('tokyonight').setup(opts) -- Replace this with your favorite colorscheme
-    vim.cmd("colorscheme tokyonight") -- Replace this with your favorite colorscheme
-    -- Colorscheme overrides
+}
+
+local chosen_theme = tokyonight_theme
+
+return {
+  chosen_theme.plugin_name,
+  opts = chosen_theme.opts,
+  lazy = false,
+  priority = 1000,
+  config = function(_, opts)
+    require(chosen_theme.module_name).setup(opts)
+    vim.cmd("colorscheme " .. chosen_theme.module_name)
+
     vim.cmd([[
       autocmd VimEnter * hi DiffAdd guifg=#00FF00 guibg=#005500
       autocmd VimEnter * hi DiffDelete guifg=#FF0000 guibg=#550000

@@ -8,7 +8,7 @@ return {
   opts = {
     options = {
       extensions = { 'quickfix', 'nvim-tree' },
-      theme = 'tokyonight'
+      theme = 'tokyonight',
     },
     sections = {
       lualine_c = {

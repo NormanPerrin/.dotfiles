@@ -51,7 +51,7 @@ keymap.set('n', '<leader>fi', require('telescope.builtin').lsp_incoming_calls, {
 keymap.set('n', '<leader>fm', function() require('telescope.builtin').treesitter({default_text=":method:"}) end)
 
 -- Git-blame
-keymap.set("n", "<leader>gb", ":GitBlameToggle<CR>") -- toggle git blame
+keymap.set("n", "<leader>gb", ":Gitsigns blame_line<CR>") -- toggle git blame
 
 -- Harpoon
 keymap.set("n", "<leader>ha", require("harpoon.mark").add_file)

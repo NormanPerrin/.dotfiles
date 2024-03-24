@@ -7,8 +7,6 @@ export EDITOR='nvim -i NONE'
 export CODE="$HOME/.local/code"
 export WORK="$HOME/.local/work"
 
-export MPV_PLAYLISTS_DIR="$XDG_DATA_HOME/mpv/playlists"
-
 export BIN="$HOME/.local/bin"
 export TWITTER_BIN="$HOME/.local/twitter-bin"
 export MEDIA_BIN="$HOME/.local/media-bin"
@@ -18,18 +16,20 @@ export GOPATH="$XDG_DATA_HOME/go"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export LSP_SERVERS="$XDG_DATA_HOME/nvim/mason/bin"
 
-local LOCAL_BIN='/opt/local/bin'
-local LOCAL_SBIN='/opt/local/bin'
 local BREW_HOME="$(brew config |rg HOMEBREW_PREFIX |cut -d' ' -f2)"
 local BREW_BIN="$BREW_HOME/bin"
 local FZF_BIN="$BREW_HOME/opt/fzf/bin"
+local GOOGLE_BIN="$HOME/.local/google-cloud-sdk/bin"
+local LOCAL_BIN='/opt/local/bin'
 
-export PATH="$BIN:$TWITTER_BIN:$MEDIA_BIN:$CODE_BIN:$LOCAL_BIN:$LOCAL_SBIN:$BREW_BIN:$FZF_BIN:$CARGO_HOME:$GOPATH/bin:$LSP_SERVERS:$PATH"
+export PATH="$BIN:$TWITTER_BIN:$MEDIA_BIN:$CODE_BIN:$LOCAL_BIN:$BREW_BIN:$FZF_BIN:$CARGO_HOME:$GOPATH/bin:$LSP_SERVERS:$GOOGLE_BIN:$PATH"
 
 # Export other
 export TEMPLATES="$HOME/.local/templates"
 export MUSIC="$HOME/Music/"
 export VIDEOS="$HOME/Movies"
+export BACKGROUNDS="$HOME/Documents/wallpapers"
+export MPV_PLAYLISTS_DIR="$XDG_DATA_HOME/mpv/playlists"
 
 # Locale
 export LANG="en_US.UTF-8"
@@ -75,6 +75,8 @@ source "$XDG_CONFIG_HOME/zsh/modules/mac-utils.zsh"
 source "$XDG_CONFIG_HOME/zsh/modules/other.zsh"
 source "$XDG_CONFIG_HOME/zsh/modules/server.zsh"
 source "$XDG_CONFIG_HOME/zsh/modules/bindings.zsh"
+# Private
+source "$HOME/.config/private.zsh" 2>/dev/null
 # Theme
 source "$BREW_HOME/share/powerlevel10k/powerlevel10k.zsh-theme"
 # Alias
@@ -82,8 +84,6 @@ source "$XDG_CONFIG_HOME/zsh/alias/directories.zsh"
 source "$XDG_CONFIG_HOME/zsh/alias/others.zsh"
 source "$XDG_CONFIG_HOME/zsh/alias/git.zsh"
 source "$XDG_CONFIG_HOME/zsh/alias/vi.zsh"
-
-source "$HOME/.config/private.zsh" 2>/dev/null
 
 # OrbStack: command-line tools and integration
 source "$HOME/.orbstack/shell/init.zsh" 2>/dev/null || :

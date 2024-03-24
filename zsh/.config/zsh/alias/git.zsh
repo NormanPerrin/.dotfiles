@@ -36,11 +36,11 @@ function ga() {
   git status
 }
 
-function grm() {
-  git checkout main
-  git pull origin main
+function grb() {
+  git checkout $1
+  git pull origin $1
   git checkout -
-  git rebase main
+  git rebase -
 }
 
 alias gb='git branch'

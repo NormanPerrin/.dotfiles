@@ -3,8 +3,9 @@ return {
   "rcarriga/nvim-dap-ui",
   event = 'VeryLazy',
   dependencies = {
+    "nvim-neotest/nvim-nio",
     "mfussenegger/nvim-dap",
-    "theHamsta/nvim-dap-virtual-text", -- inline variable text while debugging
+    "theHamsta/nvim-dap-virtual-text",   -- inline variable text while debugging
     "nvim-telescope/telescope-dap.nvim", -- telescope integration with dap
   },
   opts = {
@@ -42,28 +43,28 @@ return {
         id = "scopes",
         size = 0.5
       }, {
-          id = "stacks",
-          size = 0.34
-        }, {
-          id = "watches",
-          size = 0.15
-        }, {
-          id = "breakpoints",
-          size = 0.01
-        } },
+        id = "stacks",
+        size = 0.34
+      }, {
+        id = "watches",
+        size = 0.15
+      }, {
+        id = "breakpoints",
+        size = 0.01
+      } },
       position = "left",
       size = 50
     }, {
-        elements = { {
-          id = "console",
-          size = 0.75
-        }, {
-            id = "repl",
-            size = 0.25
-          } },
-        position = "bottom",
-        size = 10
+      elements = { {
+        id = "console",
+        size = 0.75
+      }, {
+        id = "repl",
+        size = 0.25
       } },
+      position = "bottom",
+      size = 10
+    } },
     mappings = {
       edit = "e",
       expand = { "<CR>", "<2-LeftMouse>" },
@@ -77,7 +78,7 @@ return {
       max_value_lines = 100
     }
   },
-  config = function (_, opts)
+  config = function(_, opts)
     local dap = require('dap')
     require('dapui').setup(opts)
 
@@ -101,4 +102,3 @@ return {
     -- }
   end
 }
-

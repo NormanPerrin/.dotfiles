@@ -15,10 +15,15 @@ return {
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
+
+    -- Copilot
+    'zbirenbaum/copilot-cmp',
   },
   config = function()
     local cmp = require('cmp')
     local luasnip = require('luasnip')
+
+    require("copilot_cmp").setup()
 
     vim.opt.completeopt = "menu,menuone,noselect"
 
@@ -29,23 +34,23 @@ return {
         end,
       },
       mapping = cmp.mapping.preset.insert({
-        ["<C-k>"] = cmp.mapping.select_prev_item(), -- previous suggestion
-        ["<S-Tab>"] = cmp.mapping.select_prev_item(), -- previous suggestion
-        ["<C-j>"] = cmp.mapping.select_next_item(), -- next suggestion
-        ["<Tab>"] = cmp.mapping.select_next_item(), -- next suggestion
-        ["<C-b>"] = cmp.mapping.scroll_docs(-4), -- scroll backward
-        ["<C-f>"] = cmp.mapping.scroll_docs(4), -- scroll forward
-        ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
-        ["<C-e>"] = cmp.mapping.abort(), -- clear completion window
+        ["<C-k>"] = cmp.mapping.select_prev_item(),         -- previous suggestion
+        ["<S-Tab>"] = cmp.mapping.select_prev_item(),       -- previous suggestion
+        ["<C-j>"] = cmp.mapping.select_next_item(),         -- next suggestion
+        ["<Tab>"] = cmp.mapping.select_next_item(),         -- next suggestion
+        ["<C-b>"] = cmp.mapping.scroll_docs(-4),            -- scroll backward
+        ["<C-f>"] = cmp.mapping.scroll_docs(4),             -- scroll forward
+        ["<C-Space>"] = cmp.mapping.complete(),             -- show completion suggestions
+        ["<C-e>"] = cmp.mapping.abort(),                    -- clear completion window
         ["<CR>"] = cmp.mapping.confirm({ select = false }), -- confirm selection
       }),
       sources = cmp.config.sources({
-        { name = "nvim_lsp" }, -- lsp 
-        { name = "luasnip" }, -- snippets
-        { name = "buffer" }, -- text within current buffer
-        { name = "path" }, -- file system paths
+        { name = "copilot" },  -- copilot
+        { name = "nvim_lsp" }, -- lsp
+        { name = "luasnip" },  -- snippets
+        { name = "buffer" },   -- text within current buffer
+        { name = "path" },     -- file system paths
       }),
     })
   end,
- }
-
+}

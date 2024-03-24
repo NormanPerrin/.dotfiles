@@ -8,11 +8,16 @@ opt.relativenumber = true
 opt.number = true
 
 -- Tabs & Indentation
-opt.tabstop = 4
-opt.shiftwidth = 4
+-- opt.tabstop = 4
+-- opt.shiftwidth = 4
+-- opt.expandtab = true
+-- opt.autoindent = true
+-- vim.bo.softtabstop = 4
+opt.tabstop = 2
+opt.shiftwidth = 2
 opt.expandtab = true
 opt.autoindent = true
-vim.bo.softtabstop = 4
+vim.bo.softtabstop = 2
 
 -- Line Wrapping
 opt.wrap = false
@@ -43,7 +48,7 @@ opt.splitright = true
 opt.splitbelow = true
 
 -- Optimizations
-opt.lazyredraw = true
+opt.lazyredraw = false
 opt.updatetime = 50
 opt.timeoutlen = 500
 opt.ttimeoutlen = 0
@@ -53,8 +58,3 @@ opt.iskeyword:append("-")
 
 -- Disable the mouse while in nvim
 opt.mouse = ""
-
--- Folding
-opt.foldlevel = 20
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()" -- Utilize Treesitter folds
