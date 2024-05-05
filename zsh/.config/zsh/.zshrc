@@ -16,7 +16,7 @@ export GOPATH="$XDG_DATA_HOME/go"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export LSP_SERVERS="$XDG_DATA_HOME/nvim/mason/bin"
 
-local BREW_HOME="$(brew config |rg HOMEBREW_PREFIX |cut -d' ' -f2)"
+local BREW_HOME=/opt/homebrew
 local BREW_BIN="$BREW_HOME/bin"
 local FZF_BIN="$BREW_HOME/opt/fzf/bin"
 local GOOGLE_BIN="$HOME/.local/google-cloud-sdk/bin"

@@ -59,7 +59,6 @@ key_bindings:
   - { key: T, mods: Command|Shift, chars: "\x02!" }
   # Split the current pane into two, top and bottom.
   - { key: N, mods: Command, chars: "\x02-" }
-  - { key: N, mods: Command|Shift, action: SpawnNewInstance }
   # Split the current pane into two, left and right
   - { key: N, mods: Command|Shift, chars: "\x02|" }
   # Type <escape>:w<enter> to save neovim
@@ -114,6 +113,10 @@ mouse:
 
 cursor:
   style:
-    shape: Block
-  vi_mode_style:
     shape: Beam
+    blinking: On
+  vi_mode_style:
+    shape: Block
+  blink_interval: 500
+  unfocused_hollow: true
+  thickness: 0.15

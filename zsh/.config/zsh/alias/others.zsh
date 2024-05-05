@@ -3,7 +3,7 @@ alias dcu='docker-compose up -d'
 alias dcd='docker-compose down'
 alias pn=pnpm
 alias laws='aws --endpoint-url=http://localhost:4566'
-alias youtube-dl='yt-dlp'
+alias youtube-dl="yt-dlp -o $VIDEOS/(title)s.%(ext)s"
 
 # better unix
 alias vcurl=xh
