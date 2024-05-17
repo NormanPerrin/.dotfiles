@@ -37,9 +37,6 @@ export LANG='en_US.UTF-8'
 export PAGER='nvim -R'
 export MANPAGER='nvim +Man!'
 
-# Ignore duplicates in history
-export HISTCONTROL='ignoreboth'
-
 # Search for manuals here too
 export MANPATH="$(manpath):/usr/local/man"
 
@@ -54,36 +51,12 @@ export ASPELL_CONF="per-conf $XDG_CONFIG_HOME/aspell/aspell.conf; personal $XDG_
 export BASH_COMPLETION_USER_FILE="$XDG_CONFIG_HOME/bash-completion/bash_completion"
 
 # Clean-up cache
-export HISTFILE="$XDG_CACHE_HOME/bash_history"
 export SHELL_SESSION_HISTORY=0
-export LESSHISTFILE="$XDG_CACHE_HOME/less_history"
 export NODE_REPL_HISTORY="$XDG_CACHE_HOME/node_repl_history"
-
-# Solves "Inappropriate ioctl for device gpg" error... copied and pasted from SO, don't ask me why
-export GPG_TTY=$TTY
-
-export TERM=screen-256color
 
 # Activate auto complete
 autoload -U compinit; compinit
-# complete -o nospace -C /usr/local/bin/terraform terraform
 
-# Modules
-source "$XDG_CONFIG_HOME/zsh/modules/history-substring-search.zsh"
-source "$XDG_CONFIG_HOME/zsh/modules/history.zsh"
-source "$XDG_CONFIG_HOME/zsh/modules/mac-utils.zsh"
-source "$XDG_CONFIG_HOME/zsh/modules/other.zsh"
-source "$XDG_CONFIG_HOME/zsh/modules/server.zsh"
-source "$XDG_CONFIG_HOME/zsh/modules/bindings.zsh"
-# Private
-source "$HOME/.config/private.zsh" 2>/dev/null
-# Theme
-source "$BREW_HOME/share/powerlevel10k/powerlevel10k.zsh-theme"
-# Alias
-source "$XDG_CONFIG_HOME/zsh/alias/directories.zsh"
-source "$XDG_CONFIG_HOME/zsh/alias/others.zsh"
-source "$XDG_CONFIG_HOME/zsh/alias/git.zsh"
-source "$XDG_CONFIG_HOME/zsh/alias/vi.zsh"
 
 # OrbStack: command-line tools and integration
 source "$HOME/.orbstack/shell/init.zsh" 2>/dev/null || :
@@ -92,5 +65,8 @@ source "$HOME/.orbstack/shell/init.zsh" 2>/dev/null || :
 source "$BREW_HOME/opt/fzf/shell/completion.zsh" 2> /dev/null
 source "$BREW_HOME/opt/fzf/shell/key-bindings.zsh"
 
-# setup direnv
-eval "$(direnv hook zsh)"
+# Custom
+source "$XDG_CONFIG_HOME/private.zsh" 2>/dev/null
+source "$XDG_CONFIG_HOME/zsh/modules/_.zsh"
+source "$XDG_CONFIG_HOME/zsh/alias/_.zsh"
+source "$XDG_CONFIG_HOME/zsh/functions/_.zsh"

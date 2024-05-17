@@ -22,3 +22,5 @@ function say() {
 function vgpt() {
     tgpt -q -w "$1" | ssay &
 }
+
+alias sz="source $XDG_CONFIG_HOME/zsh/.zshrc"
