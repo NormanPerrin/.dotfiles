@@ -30,3 +30,6 @@
 # Change for work related projects
 [includeIf "gitdir:~/.local/work/"]
     path = config.work
+
+[color]
+	pager = no

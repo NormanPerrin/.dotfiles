@@ -32,10 +32,10 @@ export BACKGROUNDS="$HOME/Documents/wallpapers"
 export MPV_PLAYLISTS_DIR="$XDG_DATA_HOME/mpv/playlists"
 
 # Locale
-export LANG="en_US.UTF-8"
+export LANG='en_US.UTF-8'
 
-# Color on for pager
-export PAGER=most
+export PAGER='nvim -R'
+export MANPAGER='nvim +Man!'
 
 # Ignore duplicates in history
 export HISTCONTROL='ignoreboth'
