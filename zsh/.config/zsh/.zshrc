@@ -62,11 +62,11 @@ autoload -U compinit; compinit
 source "$HOME/.orbstack/shell/init.zsh" 2>/dev/null || :
 
 # fzf auto-completion setup
-source "$BREW_HOME/opt/fzf/shell/completion.zsh" 2> /dev/null
-source "$BREW_HOME/opt/fzf/shell/key-bindings.zsh"
+source <(fzf --zsh)
 
 # Custom
 source "$XDG_CONFIG_HOME/private.zsh" 2>/dev/null
 source "$XDG_CONFIG_HOME/zsh/modules/_.zsh"
 source "$XDG_CONFIG_HOME/zsh/alias/_.zsh"
 source "$XDG_CONFIG_HOME/zsh/functions/_.zsh"
+source "$XDG_CONFIG_HOME/zsh/completions/_.zsh"

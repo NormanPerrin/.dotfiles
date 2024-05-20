@@ -1,12 +1,6 @@
 #!/bin/sh
 
-
-alias custom_fzf='fzf --reverse --height 40% --layout=reverse-list --border'
-
-playlists="$(fd . "$MPV_PLAYLISTS_DIR" -d 1)"
-playlists="$(echo "$playlists"; echo "all")"
-
-selection="$(echo "$playlists" |sed 's@'"$MPV_PLAYLISTS_DIR"/'@@' | custom_fzf --prompt='Music type: ')"
+selection="$1"
 
 if [ -z "$selection" ]; then
   echo "No selection"

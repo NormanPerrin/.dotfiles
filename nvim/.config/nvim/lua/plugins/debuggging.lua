@@ -5,8 +5,7 @@ return {
     dependencies = {
       "nvim-neotest/nvim-nio",
       "mfussenegger/nvim-dap",
-      "theHamsta/nvim-dap-virtual-text",   -- inline variable text while debugging
-      "nvim-telescope/telescope-dap.nvim", -- telescope integration with dap
+      "theHamsta/nvim-dap-virtual-text",
     },
     config = function(_, opts)
       local dap = require('dap')

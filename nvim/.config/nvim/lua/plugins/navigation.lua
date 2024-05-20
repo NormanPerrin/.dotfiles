@@ -1,29 +1,5 @@
 return {
   {
-    'nvim-telescope/telescope.nvim',
-    lazy = true,
-    branch = '0.1.x',
-    dependencies = {
-      { 'nvim-lua/plenary.nvim' },
-      {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        build = 'make',
-        cond = function()
-          return vim.fn.executable 'make' == 1
-        end,
-      },
-    },
-    opts = {
-      defaults = {
-        layout_config = {
-          vertical = {
-            width = 0.75
-          }
-        }
-      }
-    }
-  },
-  {
     'ThePrimeagen/harpoon',
     event = 'VeryLazy',
     dependencies = {
@@ -58,5 +34,12 @@ return {
       vim.g.loaded_netrwPlugin = 1
       require("nvim-tree").setup(opts)
     end
-  }
+  },
+  {
+    "ibhagwan/fzf-lua",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require("fzf-lua").setup({})
+    end
+  },
 }
