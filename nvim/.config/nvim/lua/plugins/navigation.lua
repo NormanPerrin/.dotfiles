@@ -13,9 +13,6 @@ return {
   },
   {
     'nvim-tree/nvim-tree.lua',
-    dependencies = {
-      'nvim-tree/nvim-web-devicons', -- Fancy icon support
-    },
     opts = {
       actions = {
         open_file = {
@@ -27,6 +24,17 @@ return {
       view = {
         width = 50,
       },
+      renderer = {
+        add_trailing = true,
+        group_empty = true,
+        icons = {
+          show = {
+            file = false,
+            folder = false,
+            folder_arrow = false,
+          }
+        }
+      }
     },
     config = function(_, opts)
       -- Recommended settings to disable default netrw file explorer
@@ -37,7 +45,6 @@ return {
   },
   {
     "ibhagwan/fzf-lua",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("fzf-lua").setup({})
     end

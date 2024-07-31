@@ -26,6 +26,7 @@ keymap.set('n', '<leader>ff', require('fzf-lua').files, {})
 keymap.set('n', '<leader>fq', require('fzf-lua').quickfix, {})
 keymap.set('n', '<leader>fg', require('fzf-lua').live_grep, {})
 keymap.set('n', '<leader>fj', require('fzf-lua').jumps, {})
+keymap.set('n', '<leader>fb', require('fzf-lua').buffers, {})
 
 -- Git
 keymap.set('n', '<leader>gf', require('fzf-lua').git_files, {})

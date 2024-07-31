@@ -54,7 +54,6 @@ return {
   {
     'nvim-lualine/lualine.nvim',
     dependencies = {
-      'nvim-tree/nvim-web-devicons',    -- fancy icons
       'linrongbin16/lsp-progress.nvim', -- LSP loading progress
     },
     opts = {

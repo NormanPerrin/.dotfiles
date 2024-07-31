@@ -15,7 +15,8 @@ _fzf_complete_wpp() {
 }
 
 _fzf_complete_just() {
-  available_commands="$(just -l | sed -E 's/^( |	)+//g' |  rg -v alias | tail -n +2)"
+  repository_name=$(basename "$(git rev-parse --show-toplevel)")
+  available_branches="$(git worktree list --porcelain |rg worktree |cut -d' ' -f2 |sed -E 's@.*/(.*)@\1@')"
 
   _fzf_complete --reverse --layout=reverse-list --border --prompt='Command: ' -- "$@" < <(
     sort -u <<< "$available_commands"

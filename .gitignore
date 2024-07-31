@@ -7,3 +7,5 @@ bin/.local/bin/docker-credential-osxkeychain
 bin/.local/bin/kubectl
 bin/.local/bin/orb
 bin/.local/bin/orbctl
+
+private.zsh

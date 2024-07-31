@@ -65,7 +65,7 @@ source "$HOME/.orbstack/shell/init.zsh" 2>/dev/null || :
 source <(fzf --zsh)
 
 # Custom
-source "$XDG_CONFIG_HOME/private.zsh" 2>/dev/null
+source "$XDG_CONFIG_HOME/zsh/private.zsh" 2>/dev/null
 source "$XDG_CONFIG_HOME/zsh/modules/_.zsh"
 source "$XDG_CONFIG_HOME/zsh/alias/_.zsh"
 source "$XDG_CONFIG_HOME/zsh/functions/_.zsh"

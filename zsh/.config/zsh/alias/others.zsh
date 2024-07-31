@@ -13,7 +13,7 @@ alias bat='bat -p'
 
 alias laws='aws --endpoint-url http://127.0.0.1:4566/000000000000'
 alias ssay="gosling - - -v en-US-Studio-O | mpv --no-terminal -"
-alias tgpt="tgpt --provider openai --key $OPENAI_KEY"
+alias tgpt="tgpt --model gpt-4o-mini --provider openai --key $OPENAI_KEY"
 
 function say() {
     echo "$1" | ssay
