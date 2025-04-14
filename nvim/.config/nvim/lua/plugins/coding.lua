@@ -12,6 +12,24 @@ return {
     end,
   },
   {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-neotest/nvim-nio",
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-neotest/neotest-go",
+      "fredrikaverpil/neotest-golang"
+    },
+    config = function()
+      require("neotest").setup({
+        adapters = {
+          require("neotest-golang")
+        }
+      })
+    end,
+  },
+  {
     "numToStr/Comment.nvim",
     event = 'VeryLazy',
     config = function()
@@ -36,11 +54,15 @@ return {
       -- Adds LSP completion capabilities
       'hrsh7th/cmp-nvim-lsp',
 
+      -- golang packages
+      "Snikimonkd/cmp-go-pkgs",
+
       -- Adds a number of user-friendly snippets
       'rafamadriz/friendly-snippets',
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
       'hrsh7th/cmp-cmdline',
+
 
       -- Copilot
       'zbirenbaum/copilot-cmp',
@@ -72,6 +94,7 @@ return {
         }),
         sources = cmp.config.sources({
           { name = "copilot" },  -- copilot
+          { name = "go_pkgs" },  -- go packages
           { name = "nvim_lsp" }, -- lsp
           { name = "luasnip" },  -- snippets
           { name = "buffer" },   -- text within current buffer

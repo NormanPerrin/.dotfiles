@@ -1,5 +1,8 @@
 local opt = vim.opt
 
+-- noswapfile 
+vim.cmd [[set noswapfile]]
+
 -- Session Management
 opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
@@ -35,7 +38,6 @@ opt.cursorline = true
 opt.termguicolors = true
 opt.background = "dark"
 opt.signcolumn = "yes"
-opt.guifont = 'JetBrainsMono Nerd Font:h18'
 
 -- Backspace
 opt.backspace = "indent,eol,start"

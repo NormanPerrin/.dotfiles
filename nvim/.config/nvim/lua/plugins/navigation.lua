@@ -29,12 +29,51 @@ return {
         group_empty = true,
         icons = {
           show = {
-            file = false,
-            folder = false,
-            folder_arrow = false,
+            file = true,
+            folder = true,
+            folder_arrow = true,
+            git = true,
+            modified = true,
+            hidden = true,
+            diagnostics = true,
+            bookmarks = true,
+          },
+          symlink_arrow = " ➜ ",
+          glyphs = {
+            default = "",
+            symlink = "~",
+            folder = {
+              arrow_open = "",
+              arrow_closed = "",
+              default = "",
+              open = "",
+              empty = "",
+              empty_open = "",
+              symlink = "",
+              symlink_open = "",
+            },
+            git = {
+              unstaged = "✗",
+              staged = "✓",
+              unmerged = "",
+              renamed = "➜",
+              untracked = "★",
+              deleted = "",
+              ignored = "◌"
+            }
           }
         }
-      }
+      },
+      diagnostics = {
+        enable = true,
+        show_on_dirs = true,
+        icons = {
+          hint = "",
+          info = "",
+          warning = "",
+          error = ""
+        }
+      },
     },
     config = function(_, opts)
       -- Recommended settings to disable default netrw file explorer

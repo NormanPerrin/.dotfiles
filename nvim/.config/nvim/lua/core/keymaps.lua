@@ -1,6 +1,3 @@
--- Set leader key to space
-vim.g.mapleader = " "
-
 local keymap = vim.keymap
 
 -- General keymaps
@@ -29,7 +26,6 @@ keymap.set('n', '<leader>fj', require('fzf-lua').jumps, {})
 keymap.set('n', '<leader>fb', require('fzf-lua').buffers, {})
 
 -- Git
-keymap.set('n', '<leader>gf', require('fzf-lua').git_files, {})
 keymap.set('n', '<leader>gc', require('fzf-lua').git_commits, {})
 keymap.set('n', '<leader>gb', require('fzf-lua').git_branches, {})
 keymap.set('n', '<leader>gst', require('fzf-lua').git_status, {})
@@ -63,6 +59,11 @@ keymap.set('n', '<leader>ga', '<cmd>lua vim.lsp.buf.code_action()<CR>')
 keymap.set('n', '<leader>gl', '<cmd>lua vim.diagnostic.open_float()<CR>')
 keymap.set('n', '<leader>gp', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
 keymap.set('n', '<leader>gn', '<cmd>lua vim.diagnostic.goto_next()<CR>')
+
+-- Tests
+keymap.set('n', '<leader>tt', "<cmd>lua require'neotest'.run.run()<cr>")
+keymap.set('n', '<leader>tf', "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<cr>")
+keymap.set('n', '<leader>td', "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>")
 
 -- Debugging
 keymap.set("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>")
